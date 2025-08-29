@@ -1,21 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paleta de cores Diulliany Ferro */
+  --color-primary: #10172a;
+  --color-secondary: #334154;
+  --color-accent: #cc8c5d;
+  --color-accent-hover: #b8794c;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #cbd5e1;
+  --color-dark-base: #080a10;
+  --color-dark-alt: #08101a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-primary);
+  color: var(--color-text-primary);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* Typography Base */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 /* Configuração para fontes personalizadas */
@@ -26,5 +42,259 @@ body {
 
   .font-inter {
     font-family: var(--font-inter), sans-serif;
+  }
+
+  /* Gradientes personalizados */
+  .bg-header-gradient {
+    background: linear-gradient(
+      180deg,
+      var(--color-dark-base) 0%,
+      var(--color-primary) 80%,
+      var(--color-dark-alt) 100%
+    );
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-dark-base) 0%,
+      var(--color-primary) 50%,
+      var(--color-secondary) 100%
+    );
+  }
+
+  .bg-footer-gradient {
+    background: linear-gradient(
+      180deg,
+      var(--color-primary) 0%,
+      var(--color-dark-base) 100%
+    );
+  }
+
+  .bg-section-a {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      rgba(16, 23, 42, 0.8) 100%
+    );
+  }
+
+  .bg-section-b {
+    background: linear-gradient(
+      135deg,
+      var(--color-secondary) 0%,
+      rgba(51, 65, 84, 0.8) 100%
+    );
+  }
+
+  .bg-card-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(16, 23, 42, 0.9) 0%,
+      rgba(51, 65, 84, 0.7) 100%
+    );
+    backdrop-filter: blur(12px);
+  }
+
+  /* Cores de texto personalizadas */
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  /* Botões personalizados */
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(204, 140, 93, 0.3);
+  }
+
+  .btn-secondary-ghost {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    background-color: transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary-ghost:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary-ghost:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Cards com elevação */
+  .card-elevated {
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(
+      135deg,
+      rgba(16, 23, 42, 0.9) 0%,
+      rgba(51, 65, 84, 0.7) 100%
+    );
+    backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .card-elevated:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .card-glass {
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Container padrão */
+  .container-default {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+    opacity: 0;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 0.5s;
+    opacity: 0;
+  }
+
+  .animate-delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
+  }
+
+  .animate-delay-700 {
+    animation-delay: 0.7s;
+    opacity: 0;
+  }
+
+  .animate-delay-800 {
+    animation-delay: 0.8s;
+    opacity: 0;
+  }
+
+  .animate-delay-900 {
+    animation-delay: 0.9s;
+    opacity: 0;
+  }
+
+  .animate-delay-1000 {
+    animation-delay: 1s;
+    opacity: 0;
+  }
+
+  /* Acessibilidade */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up,
+    .animate-delay-100,
+    .animate-delay-200,
+    .animate-delay-300 {
+      animation: none;
+      opacity: 1;
+    }
+
+    * {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+  /* Focus styles para acessibilidade */
+  .focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(204, 140, 93, 0.3);
+  }
+
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-primary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-hover);
   }
 }
