@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.diuferroadv.com.br
+
+# Sitemaps
+Sitemap: https://www.diuferroadv.com.br/sitemap.xml

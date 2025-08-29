@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DiuferroAdv - Site Institucional de Advocacia Criminal
 
-## Getting Started
+Site institucional moderno para advogada criminalista, desenvolvido com as tecnologias mais avançadas do mercado.
 
-First, run the development server:
+## 🚀 Tecnologias
+
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **TailwindCSS**
+- **next-seo** e **next-sitemap** para SEO
+- **JSON-LD** para dados estruturados
+- **React Hook Form** e **Zod** para formulários
+- **Google Tag Manager** + Analytics
+- **Lucide React** para ícones modernos
+- **Vercel** para deploy
+
+## 🏗️ Estrutura do Projeto
+
+```
+diuferroadv/
+├── src/
+│   ├── app/                 # App Router (Next.js 14)
+│   │   ├── layout.tsx       # Layout principal
+│   │   ├── page.tsx         # Página inicial
+│   │   └── globals.css      # Estilos globais
+│   └── components/          # Componentes reutilizáveis
+│       ├── Header.tsx       # Cabeçalho com navegação
+│       └── Footer.tsx       # Rodapé com informações
+├── public/                  # Arquivos estáticos
+├── next-sitemap.config.js   # Configuração do sitemap
+└── tailwind.config.js       # Configuração do TailwindCSS
+```
+
+## 🎨 Design Features
+
+- **Design Responsivo**: Totalmente adaptado para desktop, tablet e mobile
+- **Tipografia Moderna**: Combinação das fontes Inter e Playfair Display
+- **Paleta Profissional**: Cores sóbrias com destaque em âmbar
+- **Ícones Modernos**: Lucide React para ícones vetoriais
+- **Animações Suaves**: Transições CSS para melhor UX
+
+## 📱 Funcionalidades
+
+- ✅ **Landing Page Completa** com hero section atrativa
+- ✅ **Navegação Responsiva** com menu mobile
+- ✅ **Seções Profissionais**: Features, áreas de atuação, CTA
+- ✅ **SEO Otimizado** com metadados e dados estruturados
+- ✅ **Performance Otimizada** com Turbopack
+- ✅ **Sitemap Automático** gerado pelo next-sitemap
+
+## 🛠️ Como Executar
+
+### Desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build de Produção
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+### Linting
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📊 SEO e Analytics
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Meta Tags** otimizadas para SEO
+- **Open Graph** para redes sociais
+- **JSON-LD** para dados estruturados
+- **Google Tag Manager** para tracking
+- **Sitemap** automaticamente gerado
+- **Robots.txt** configurado
 
-## Deploy on Vercel
+## 🚀 Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Este projeto está configurado para deploy fácil na **Vercel**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Conecte seu repositório GitHub à Vercel
+2. Configure as variáveis de ambiente:
+   - `SITE_URL`: URL do seu site
+   - `GTM_ID`: ID do Google Tag Manager
+3. Deploy automático a cada commit
+
+## 📝 Personalização
+
+Para personalizar o site:
+
+1. **Informações da Advogada**: Edite os placeholders `[Nome]` nos arquivos
+2. **Contatos**: Atualize telefones e endereços nos componentes
+3. **Cores**: Modifique a paleta no `tailwind.config.js`
+4. **Conteúdo**: Edite os textos nos componentes conforme necessário
+
+## 🔧 Próximos Passos
+
+- [ ] Criar páginas internas (Sobre, Áreas de Atuação, Contato)
+- [ ] Implementar formulário de contato
+- [ ] Adicionar blog/artigos jurídicos
+- [ ] Integrar WhatsApp Business
+- [ ] Implementar sistema de agendamento
+
+## 📄 Licença
+
+Este projeto é privado e desenvolvido especificamente para DiuferroAdv.
+
+---
+
+**DiuferroAdv** - Advocacia Criminal Especializada
