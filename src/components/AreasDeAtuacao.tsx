@@ -1,144 +1,208 @@
 import Link from "next/link";
-import { Scale, Shield, Users, Car, Home, CreditCard } from "lucide-react";
+import {
+  Shield,
+  FileText,
+  Building2,
+  Gavel,
+  Scale,
+  AlertTriangle,
+} from "lucide-react";
 
 export default function AreasDeAtuacao() {
   const areas = [
     {
-      icon: Scale,
-      title: "Crimes contra a Pessoa",
-      description:
-        "Defesa em casos de homicídio, lesão corporal, ameaça, injúria, calúnia e difamação.",
-      examples: ["Homicídio", "Lesão Corporal", "Ameaça", "Injúria e Calúnia"],
-    },
-    {
-      icon: CreditCard,
-      title: "Crimes Patrimoniais",
-      description:
-        "Especialização em furto, roubo, estelionato, apropriação indébita e receptação.",
-      examples: [
-        "Furto e Roubo",
-        "Estelionato",
-        "Apropriação Indébita",
-        "Receptação",
-      ],
-    },
-    {
-      icon: Car,
-      title: "Crimes de Trânsito",
-      description:
-        "Defesa em homicídio culposo, embriaguez ao volante e outras infrações graves.",
-      examples: [
-        "Homicídio Culposo",
-        "Embriaguez",
-        "Direção Perigosa",
-        "Fuga do Local",
-      ],
-    },
-    {
       icon: Shield,
-      title: "Crimes contra a Dignidade Sexual",
+      title: "Crimes Contra a Vida",
       description:
-        "Defesa sensível e especializada em casos delicados que exigem discrição máxima.",
-      examples: [
-        "Estupro",
-        "Assédio Sexual",
-        "Exploração Sexual",
-        "Pornografia",
+        "Defesa em casos de homicídio, lesão corporal e outros crimes contra a pessoa.",
+      specialties: ["Homicídio", "Lesão Corporal", "Ameaça", "Sequestro"],
+    },
+    {
+      icon: FileText,
+      title: "Crimes Tributários",
+      description:
+        "Especialização em sonegação fiscal, elisão fiscal e questões tributárias penais.",
+      specialties: [
+        "Sonegação Fiscal",
+        "Elisão Fiscal",
+        "Crimes contra Ordem Tributária",
+        "Parcelamento",
       ],
     },
     {
-      icon: Users,
-      title: "Violência Doméstica",
+      icon: Building2,
+      title: "Crimes Empresariais",
       description:
-        "Acompanhamento em casos de violência doméstica com foco na proteção de direitos.",
-      examples: [
-        "Lei Maria da Penha",
-        "Medidas Protetivas",
-        "Ameaça Doméstica",
-        "Lesão Doméstica",
+        "Defesa corporativa em crimes contra economia popular, lavagem de dinheiro.",
+      specialties: [
+        "Lavagem de Dinheiro",
+        "Economia Popular",
+        "Crimes Societários",
+        "Compliance",
       ],
     },
     {
-      icon: Home,
+      icon: Gavel,
       title: "Tribunal do Júri",
       description:
-        "Ampla experiência em defesas perante o Tribunal do Júri em crimes dolosos contra a vida.",
-      examples: [
-        "Plenário do Júri",
+        "Atuação especializada em plenário do júri com estratégias de defesa eficazes.",
+      specialties: [
         "Estratégia de Defesa",
-        "Interrogatório",
+        "Plenário do Júri",
+        "Recursos",
         "Sustentação Oral",
+      ],
+    },
+    {
+      icon: Scale,
+      title: "Habeas Corpus",
+      description:
+        "Medidas de urgência para garantir a liberdade e os direitos fundamentais.",
+      specialties: [
+        "Prisão Preventiva",
+        "Flagrante",
+        "Liberdade Provisória",
+        "Relaxamento",
+      ],
+    },
+    {
+      icon: AlertTriangle,
+      title: "Crimes de Trânsito",
+      description:
+        "Defesa em acidentes de trânsito, embriaguez ao volante e infrações penais.",
+      specialties: [
+        "Embriaguez ao Volante",
+        "Homicídio Culposo",
+        "Lesão no Trânsito",
+        "Suspensão da CNH",
       ],
     },
   ];
 
   return (
-    <section id="areas" className="bg-section-a py-20">
-      <div className="container-default">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
+    <section
+      className="py-20"
+      style={{
+        background:
+          "linear-gradient(135deg, #10172a 0%, #334154 50%, #10172a 100%)",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header - Título Centralizado */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-inter">
             Áreas de Atuação
           </h2>
-          <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-            Defesa especializada em diversas áreas do direito criminal com
-            estratégias personalizadas para cada tipo de caso
+          <p className="text-lg font-light text-white max-w-4xl mx-auto leading-relaxed">
+            Especialização completa em Direito Criminal com foco em resultados
+            excepcionais e defesa estratégica personalizada para cada caso.
           </p>
         </div>
 
+        {/* Cards Grid - 3 Colunas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {areas.map((area, index) => {
             const IconComponent = area.icon;
             return (
               <div
                 key={index}
-                className={`card-elevated group animate-fade-in-up animate-delay-${
-                  index * 100
-                }`}
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
               >
-                <div className="bg-accent/20 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/30 transition-all duration-300 group-hover:scale-110">
-                  <IconComponent
-                    className="h-8 w-8 text-accent"
-                    aria-hidden="true"
-                  />
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div
+                    className="w-14 h-14 rounded-xl flex items-center justify-center mr-4"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #cc8c5d 0%, #b8794c 100%)",
+                    }}
+                  >
+                    <IconComponent
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    {area.title}
+                  </h3>
                 </div>
 
-                <h3 className="text-xl font-bold text-primary mb-4 text-center">
-                  {area.title}
-                </h3>
-
-                <p className="text-secondary mb-6 text-center leading-relaxed">
+                {/* Descrição (Opcional) */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
                   {area.description}
                 </p>
 
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-accent text-sm uppercase tracking-wider text-center">
-                    Especialidades:
-                  </h4>
-                  <ul className="text-sm text-secondary space-y-2">
-                    {area.examples.map((example, exampleIndex) => (
-                      <li key={exampleIndex} className="flex items-center">
-                        <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
-                        <span className="font-medium">{example}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Lista de Serviços */}
+                <div className="space-y-3 mb-8">
+                  {area.specialties.map((specialty, specIndex) => (
+                    <div key={specIndex} className="flex items-center">
+                      <div
+                        className="w-2 h-2 mr-3 flex-shrink-0"
+                        style={{ backgroundColor: "#cc8c5d" }}
+                      />
+                      <span className="text-sm font-normal text-white/90">
+                        {specialty}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px mb-6"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
+
+                {/* CTA WhatsApp Centralizado */}
+                <div className="flex justify-center relative z-10">
+                  <Link
+                    href="https://wa.me/5511999999999"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-white hover:text-white/80 font-normal text-sm transition-colors duration-300 group"
+                  >
+                    <svg
+                      className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110"
+                      fill="#25D366"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+                    </svg>
+                    <span>Consultar no WhatsApp</span>
+                  </Link>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        <div className="text-center mt-16 animate-fade-in-up animate-delay-600">
-          <Link
-            href="#contato"
-            className="btn-primary inline-flex items-center space-x-3 text-lg group"
-          >
-            <span>Discutir Meu Caso</span>
-            <Scale
-              className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
-              aria-hidden="true"
-            />
-          </Link>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Scale, Phone, Mail } from "lucide-react";
+import { Menu, X, Scale } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,121 +16,98 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-header-gradient sticky top-0 z-50 backdrop-blur-sm">
-      {/* Top bar */}
-      <div className="bg-gradient-to-r from-[#080a10] to-[#10172a] text-primary py-1 border-b border-white/10">
-        <div className="container-default py-0">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center">
-                <Phone
-                  className="h-4 w-4 mr-2 text-accent"
-                  aria-hidden="true"
-                />
-                <span className="font-medium">(11) 99999-9999</span>
+    <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-xl border-b border-slate-700/30">
+      {/* Main elegant header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          {/* Refined Logo */}
+          <Link href="/" className="flex items-center group">
+            <div className="relative mr-4">
+              <div className="w-10 h-10 bg-gradient-to-br from-[#cc8c5d] to-[#b8794c] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-[#cc8c5d]/25 transition-all duration-300">
+                <Scale className="h-5 w-5 text-white" />
               </div>
-              <div className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-accent" aria-hidden="true" />
-                <span className="font-medium">diuferroadv@gmail.com</span>
-              </div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#cc8c5d] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="hidden md:block">
-              <span className="text-secondary font-medium">
-                Atendimento 24h em casos urgentes
-              </span>
+            <div>
+              <h1 className="text-xl font-bold text-white tracking-tight">
+                Diulliany <span className="text-accent">Ferro</span>
+              </h1>
+              <p className="text-xs text-slate-400 font-medium uppercase tracking-[0.2em]">
+                Advocacia Criminal
+              </p>
             </div>
-          </div>
-        </div>
-      </div>
+          </Link>
 
-      {/* Main header */}
-      <div className="container-default py-0">
-        <div className="flex justify-between items-center py-3">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center group">
-              <div className="relative">
-                <Scale
-                  className="h-8 w-8 text-accent mr-3 transition-transform duration-300 group-hover:scale-110"
-                  aria-hidden="true"
-                />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div>
-                <h1 className="text-xl font-playfair font-bold text-primary tracking-tight">
-                  <span className="text-accent">D</span>iulliany{" "}
-                  <span className="text-accent">F</span>erro
-                </h1>
-                <p className="text-xs text-secondary font-medium uppercase tracking-wider">
-                  Advocacia Criminal
-                </p>
-              </div>
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-1">
+          {/* Elegant Navigation */}
+          <nav className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-secondary hover:text-accent px-4 py-2 text-sm font-semibold uppercase tracking-wide transition-all duration-300 rounded-lg hover:bg-white/5 focus-visible"
+                className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-all duration-300 relative group"
               >
                 {item.name}
+                <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-accent group-hover:w-full group-hover:left-0 transition-all duration-300"></div>
               </Link>
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Elegant CTA */}
+          <div className="hidden lg:block">
             <Link
               href="#contato"
-              className="btn-primary inline-flex items-center space-x-2"
+              className="bg-gradient-to-r from-[#cc8c5d] to-[#b8794c] hover:from-[#b8794c] hover:to-[#a66d3e] text-white px-6 py-2.5 rounded-xl font-semibold text-sm shadow-lg hover:shadow-[#cc8c5d]/25 transition-all duration-300 relative overflow-hidden group"
             >
-              <span>Consulta Gratuita</span>
+              <span className="relative z-10">Consulta Gratuita</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#b8794c] to-[#cc8c5d] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-primary hover:text-accent p-2 rounded-lg transition-colors duration-300 focus-visible"
-              aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
-          </div>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-all duration-300"
+            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+          >
+            {isMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Elegant Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gradient-to-b from-[#10172a] to-[#334154] border-t border-white/10 backdrop-blur-md">
-          <div className="px-6 pt-4 pb-6 space-y-3">
-            {navigation.map((item, index) => (
+        <div className="lg:hidden bg-slate-900/98 backdrop-blur-xl border-t border-slate-700/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <nav className="space-y-1">
+              {navigation.map((item, index) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-xl font-medium transition-all duration-300 group"
+                  onClick={() => setIsMenuOpen(false)}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="flex items-center justify-between">
+                    <span>{item.name}</span>
+                    <div className="w-2 h-2 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </Link>
+              ))}
+            </nav>
+
+            <div className="mt-6 pt-6 border-t border-slate-700/30">
               <Link
-                key={item.name}
-                href={item.href}
-                className={`text-secondary hover:text-accent block px-4 py-3 text-base font-semibold uppercase tracking-wide rounded-lg hover:bg-white/5 transition-all duration-300 animate-fade-in-up animate-delay-${
-                  index * 100
-                }`}
+                href="#contato"
+                className="block w-full bg-gradient-to-r from-[#cc8c5d] to-[#b8794c] hover:from-[#b8794c] hover:to-[#a66d3e] text-white text-center px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-[#cc8c5d]/25 transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {item.name}
+                Consulta Gratuita
               </Link>
-            ))}
-            <Link
-              href="#contato"
-              className="btn-primary w-full text-center mt-6 animate-fade-in-up animate-delay-500"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Consulta Gratuita
-            </Link>
+            </div>
           </div>
         </div>
       )}

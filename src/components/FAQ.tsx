@@ -48,16 +48,6 @@ export default function FAQ() {
       resposta:
         "Entre em contato imediatamente com um advogado antes de ir à delegacia. Você tem direito a permanecer em silêncio e ter assistência de advogado. Nunca vá sozinho a um depoimento sem orientação jurídica adequada.",
     },
-    {
-      pergunta: "Posso recorrer de uma sentença condenatória?",
-      resposta:
-        "Sim! Você pode recorrer em segunda instância e, em casos específicos, nos tribunais superiores. Analisamos as possibilidades de recurso e as chances de sucesso, sempre trabalhando para reverter ou reduzir condenações.",
-    },
-    {
-      pergunta: "Como é o atendimento em casos de emergência?",
-      resposta:
-        "Oferecemos atendimento 24 horas para emergências como prisões em flagrante, mandados de busca e apreensão, ou situações urgentes. Entre em contato pelo telefone de emergência e terá orientação imediata.",
-    },
   ];
 
   const togglePergunta = (index: number) => {
@@ -65,19 +55,20 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="bg-section-a py-20">
+    <section
+      id="faq"
+      className="py-20 font-sans"
+      style={{
+        background:
+          "linear-gradient(135deg, #10172a 0%, #334154 50%, #10172a 100%)",
+      }}
+    >
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="flex items-center justify-center mb-6">
-            <HelpCircle
-              className="h-12 w-12 text-accent mr-4"
-              aria-hidden="true"
-            />
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary">
-              Perguntas Frequentes
-            </h2>
-          </div>
-          <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Perguntas Frequentes
+          </h2>
+          <p className="text-lg font-light text-white max-w-4xl mx-auto leading-relaxed">
             Esclarecemos as principais dúvidas sobre direito criminal e nossos
             serviços
           </p>
@@ -87,24 +78,48 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`card-glass border border-white/10 overflow-hidden animate-fade-in-up animate-delay-${
-                index * 100
-              }`}
+              className="relative overflow-hidden rounded-2xl transition-all duration-300 group animate-fade-in-up"
+              style={{
+                backgroundColor: "#242b38",
+                background: `
+                  linear-gradient(135deg, 
+                    rgba(204, 140, 93, 0.03) 0%, 
+                    rgba(204, 140, 93, 0.01) 25%, 
+                    transparent 50%
+                  ),
+                  #242b38
+                `,
+                border: "1px solid rgba(204, 140, 93, 0.08)",
+                boxShadow: `
+                  0 4px 20px rgba(0, 0, 0, 0.25),
+                  inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                `,
+                animationDelay: `${index * 100}ms`,
+              }}
             >
+              {/* Efeito de Brilho Superior Esquerdo */}
+              <div
+                className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                style={{
+                  background:
+                    "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                }}
+              />
+
               <button
                 onClick={() => togglePergunta(index)}
-                className="w-full px-6 py-6 text-left hover:bg-white/5 transition-all duration-300 flex items-center justify-between focus-visible"
+                className="w-full px-8 py-6 text-left hover:bg-white/5 transition-all duration-300 flex items-center justify-between focus-visible relative z-10"
                 aria-expanded={perguntaAberta === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="font-semibold text-primary pr-4 text-lg">
+                <span className="font-semibold text-white pr-4 text-lg">
                   {faq.pergunta}
                 </span>
-                <div className="bg-accent/20 p-2 rounded-full transition-all duration-300 group">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 bg-white/5 hover:bg-white/10 border border-white/10">
                   {perguntaAberta === index ? (
-                    <Minus className="h-5 w-5 text-accent transition-transform duration-300" />
+                    <Minus className="h-4 w-4 text-white/70 transition-transform duration-300" />
                   ) : (
-                    <Plus className="h-5 w-5 text-accent transition-transform duration-300" />
+                    <Plus className="h-4 w-4 text-white/70 transition-transform duration-300" />
                   )}
                 </div>
               </button>
@@ -112,9 +127,18 @@ export default function FAQ() {
               {perguntaAberta === index && (
                 <div
                   id={`faq-answer-${index}`}
-                  className="px-6 py-6 bg-white/5 border-t border-white/10 animate-fade-in-up"
+                  className="px-8 pb-6 relative z-10"
                 >
-                  <p className="text-secondary leading-relaxed text-base">
+                  {/* Linha separadora dourada */}
+                  <div
+                    className="w-full h-px mb-6"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                      opacity: 0.3,
+                    }}
+                  />
+                  <p className="text-white/90 leading-relaxed text-base">
                     {faq.resposta}
                   </p>
                 </div>
@@ -123,23 +147,49 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="mt-16 card-glass p-8 lg:p-12 text-center border border-accent/20 animate-fade-in-up animate-delay-1000">
-          <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+        <div
+          className="mt-16 p-8 lg:p-12 text-center relative overflow-hidden rounded-2xl transition-all duration-300 group animate-fade-in-up animate-delay-1000"
+          style={{
+            backgroundColor: "#242b38",
+            background: `
+              linear-gradient(135deg, 
+                rgba(204, 140, 93, 0.03) 0%, 
+                rgba(204, 140, 93, 0.01) 25%, 
+                transparent 50%
+              ),
+              #242b38
+            `,
+            border: "1px solid rgba(204, 140, 93, 0.08)",
+            boxShadow: `
+              0 4px 20px rgba(0, 0, 0, 0.25),
+              inset 0 1px 0 rgba(204, 140, 93, 0.05)
+            `,
+          }}
+        >
+          {/* Efeito de Brilho Superior Esquerdo */}
+          <div
+            className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+            style={{
+              background:
+                "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+            }}
+          />
+
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 relative z-10">
             Não encontrou sua resposta?
           </h3>
-          <p className="text-secondary mb-8 text-lg leading-relaxed">
+          <p className="text-white/90 mb-8 text-lg leading-relaxed relative z-10">
             Entre em contato conosco para uma consulta personalizada. Estamos
             aqui para esclarecer todas as suas dúvidas jurídicas.
           </p>
           <a
-            href="#contato"
-            className="btn-primary inline-flex items-center space-x-3 text-lg group"
+            href="https://wa.me/5511999999999"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 bg-[#cc8c5d] hover:bg-[#b8794c] relative z-10"
           >
+            <HelpCircle className="h-5 w-5" />
             <span>Fazer uma Pergunta</span>
-            <HelpCircle
-              className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
-              aria-hidden="true"
-            />
           </a>
         </div>
       </div>
