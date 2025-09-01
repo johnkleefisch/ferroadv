@@ -12,69 +12,69 @@ export default function AreasDeAtuacao() {
   const areas = [
     {
       icon: Shield,
-      title: "Crimes Contra a Vida",
+      title: "Crimes Contra a Pessoa",
       description:
-        "Defesa em casos de homicídio, lesão corporal e outros crimes contra a pessoa.",
+        "Defesa especializada em crimes que atingem a integridade física, moral e psicológica da pessoa.",
       specialties: ["Homicídio", "Lesão Corporal", "Ameaça", "Sequestro"],
     },
     {
       icon: FileText,
-      title: "Crimes Tributários",
+      title: "Crimes Contra o Patrimônio",
       description:
-        "Especialização em sonegação fiscal, elisão fiscal e questões tributárias penais.",
+        "Atuação em crimes que visam o patrimônio alheio, desde furtos simples até crimes complexos.",
       specialties: [
-        "Sonegação Fiscal",
-        "Elisão Fiscal",
-        "Crimes contra Ordem Tributária",
-        "Parcelamento",
+        "Furto e Roubo",
+        "Estelionato",
+        "Apropriação Indébita",
+        "Receptação",
       ],
     },
     {
-      icon: Building2,
-      title: "Crimes Empresariais",
+      icon: AlertTriangle,
+      title: "Lei de Drogas",
       description:
-        "Defesa corporativa em crimes contra economia popular, lavagem de dinheiro.",
+        "Defesa em crimes relacionados ao tráfico e uso de entorpecentes com estratégias diferenciadas.",
       specialties: [
-        "Lavagem de Dinheiro",
-        "Economia Popular",
-        "Crimes Societários",
-        "Compliance",
+        "Tráfico de Drogas",
+        "Porte para Uso",
+        "Associação para o Tráfico",
+        "Financiamento do Tráfico",
       ],
     },
     {
       icon: Gavel,
-      title: "Tribunal do Júri",
+      title: "Audiências e Julgamentos",
       description:
-        "Atuação especializada em plenário do júri com estratégias de defesa eficazes.",
+        "Atuação especializada em plenário do júri e audiências com estratégias de defesa eficazes.",
       specialties: [
-        "Estratégia de Defesa",
-        "Plenário do Júri",
-        "Recursos",
+        "Tribunal do Júri",
+        "Audiências de Instrução",
         "Sustentação Oral",
+        "Interrogatórios",
       ],
     },
     {
       icon: Scale,
       title: "Habeas Corpus",
       description:
-        "Medidas de urgência para garantir a liberdade e os direitos fundamentais.",
+        "Medidas de urgência para garantir a liberdade e os direitos fundamentais do cliente.",
       specialties: [
         "Prisão Preventiva",
         "Flagrante",
         "Liberdade Provisória",
-        "Relaxamento",
+        "Relaxamento de Prisão",
       ],
     },
     {
-      icon: AlertTriangle,
-      title: "Crimes de Trânsito",
+      icon: Building2,
+      title: "Atendimentos de Urgência",
       description:
-        "Defesa em acidentes de trânsito, embriaguez ao volante e infrações penais.",
+        "Atendimento imediato 24h para situações que exigem resposta rápida e eficiente.",
       specialties: [
-        "Embriaguez ao Volante",
-        "Homicídio Culposo",
-        "Lesão no Trânsito",
-        "Suspensão da CNH",
+        "Prisão em Flagrante",
+        "Plantão Judiciário",
+        "Medidas Cautelares",
+        "Orientação Familiar",
       ],
     },
   ];
@@ -91,7 +91,10 @@ export default function AreasDeAtuacao() {
         {/* Header - Título Centralizado */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-inter">
-            Áreas de Atuação
+            Áreas de{" "}
+            <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+              Atuação
+            </span>
           </h2>
           <p className="text-lg font-light text-white max-w-4xl mx-auto leading-relaxed">
             Especialização completa em Direito Criminal com foco em resultados
@@ -135,13 +138,7 @@ export default function AreasDeAtuacao() {
 
                 {/* Ícone e Título na mesma linha */}
                 <div className="flex items-center mb-6 relative z-10">
-                  <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center mr-4"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, #cc8c5d 0%, #b8794c 100%)",
-                    }}
-                  >
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
                     <IconComponent
                       className="h-7 w-7 text-slate-900"
                       strokeWidth={1.5}
@@ -162,7 +159,7 @@ export default function AreasDeAtuacao() {
                   {area.specialties.map((specialty, specIndex) => (
                     <div key={specIndex} className="flex items-center">
                       <div
-                        className="w-2 h-2 mr-3 flex-shrink-0"
+                        className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
                         style={{ backgroundColor: "#cc8c5d" }}
                       />
                       <span className="text-sm font-normal text-white/90">

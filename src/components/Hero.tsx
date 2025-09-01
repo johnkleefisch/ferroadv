@@ -45,34 +45,24 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
-          <div className="space-y-6">
-            {/* Logo/Brand */}
-            <div className="flex items-center space-x-3">
-              <div className="bg-[#cc8c5d] p-2 rounded-lg">
-                <Scale className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <h2 className="text-lg font-bold text-white">
-                  DIULLIANY FERRO
-                </h2>
-                <p className="text-accent text-xs font-medium uppercase tracking-wider">
-                  ADVOCACIA
-                </p>
-              </div>
-            </div>
-
+          <div className="space-y-8">
             {/* Main Title */}
             <div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                 Defesa Criminal
                 <br />
-                <span className="text-accent">Especializada</span>
+                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+                  Ágil e Especializada
+                </span>
               </h1>
+            </div>
 
+            {/* Description */}
+            <div>
               <p className="text-lg text-gray-300 leading-relaxed max-w-lg">
-                Advocacia criminal de excelência com mais de 10 anos de
-                experiência. Defendemos seus direitos com competência e
-                dedicação absoluta.
+                Está sendo preso, investigado ou processado? Conte com uma
+                advogada experiente, estratégica e dedicada, pronta para agir
+                com rapidez e precisão.
               </p>
             </div>
 
@@ -82,14 +72,7 @@ export default function Hero() {
                 href="https://wa.me/5511999999999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                style={{ backgroundColor: "#cc8c5d" }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.backgroundColor = "#b8794c")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor = "#cc8c5d")
-                }
+                className="bg-gradient-to-r from-[#cc8c5d] to-[#d4956a] hover:from-[#b8794c] hover:to-[#c88759] text-white px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>INICIAR ATENDIMENTO</span>
