@@ -66,7 +66,10 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Perguntas Frequentes
+            Perguntas{" "}
+            <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+              Frequentes
+            </span>
           </h2>
           <p className="text-lg font-light text-white max-w-4xl mx-auto leading-relaxed">
             Esclarecemos as principais dúvidas sobre direito criminal e nossos
@@ -115,11 +118,11 @@ export default function FAQ() {
                 <span className="font-semibold text-white pr-4 text-lg">
                   {faq.pergunta}
                 </span>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 bg-white/5 hover:bg-white/10 border border-white/10">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] hover:from-[#b8794c] hover:to-[#d4956a]">
                   {perguntaAberta === index ? (
-                    <Minus className="h-4 w-4 text-white/70 transition-transform duration-300" />
+                    <Minus className="h-4 w-4 text-white transition-transform duration-300" />
                   ) : (
-                    <Plus className="h-4 w-4 text-white/70 transition-transform duration-300" />
+                    <Plus className="h-4 w-4 text-white transition-transform duration-300" />
                   )}
                 </div>
               </button>

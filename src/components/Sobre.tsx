@@ -1,4 +1,4 @@
-import { Users, CheckCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Sobre() {
@@ -179,10 +179,10 @@ export default function Sobre() {
               }}
             >
               <blockquote className="text-lg italic text-white/95 mb-4 leading-relaxed">
-                "Cada cliente que atendo recebe não apenas minha expertise
+                &ldquo;Cada cliente que atendo recebe não apenas minha expertise
                 técnica, mas também meu comprometimento pessoal. Acredito que a
                 advocacia criminal vai além das leis - é sobre defender a
-                dignidade humana e garantir justiça."
+                dignidade humana e garantir justiça.&rdquo;
               </blockquote>
               <cite
                 className="text-base font-semibold"

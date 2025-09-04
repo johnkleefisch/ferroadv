@@ -8,12 +8,12 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Início", href: "#hero" },
-    { name: "Sobre", href: "#sobre" },
-    { name: "Áreas de Atuação", href: "#areas" },
-    { name: "Serviços", href: "#servicos" },
-    { name: "Artigos", href: "#artigos" },
-    { name: "Contato", href: "#contato" },
+    { name: "Início", href: "/" },
+    { name: "Sobre", href: "/sobre" },
+    { name: "Áreas de Atuação", href: "/#areas" },
+    { name: "Serviços", href: "/#servicos" },
+    { name: "Artigos", href: "/#artigos" },
+    { name: "Contato", href: "/#contato" },
   ];
 
   return (

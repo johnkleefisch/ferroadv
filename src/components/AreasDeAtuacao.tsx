@@ -1,24 +1,29 @@
 import Link from "next/link";
 import {
-  Shield,
-  FileText,
-  Building2,
+  Users,
+  CircleDollarSign,
+  Pill,
   Gavel,
   Scale,
-  AlertTriangle,
+  ShieldAlert,
 } from "lucide-react";
 
 export default function AreasDeAtuacao() {
   const areas = [
     {
-      icon: Shield,
+      icon: Users,
       title: "Crimes Contra a Pessoa",
       description:
         "Defesa especializada em crimes que atingem a integridade física, moral e psicológica da pessoa.",
-      specialties: ["Homicídio", "Lesão Corporal", "Ameaça", "Sequestro"],
+      specialties: [
+        "Homicídio",
+        "Lesão Corporal",
+        "Violência Doméstica (Lei Maria da Penha)",
+        "Sequestro",
+      ],
     },
     {
-      icon: FileText,
+      icon: CircleDollarSign,
       title: "Crimes Contra o Patrimônio",
       description:
         "Atuação em crimes que visam o patrimônio alheio, desde furtos simples até crimes complexos.",
@@ -30,7 +35,7 @@ export default function AreasDeAtuacao() {
       ],
     },
     {
-      icon: AlertTriangle,
+      icon: Pill,
       title: "Lei de Drogas",
       description:
         "Defesa em crimes relacionados ao tráfico e uso de entorpecentes com estratégias diferenciadas.",
@@ -66,15 +71,15 @@ export default function AreasDeAtuacao() {
       ],
     },
     {
-      icon: Building2,
+      icon: ShieldAlert,
       title: "Atendimentos de Urgência",
       description:
         "Atendimento imediato 24h para situações que exigem resposta rápida e eficiente.",
       specialties: [
         "Prisão em Flagrante",
-        "Plantão Judiciário",
+        "Acompanhamento em Delegacia",
+        "Audiência de Custódia",
         "Medidas Cautelares",
-        "Orientação Familiar",
       ],
     },
   ];

@@ -2,13 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Scale,
-  MessageCircle,
-  FileText,
-  Clock,
-  TrendingUp,
-} from "lucide-react";
+import { MessageCircle, FileText, Clock, TrendingUp } from "lucide-react";
 
 export default function Hero() {
   return (

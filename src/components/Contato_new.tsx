@@ -82,7 +82,10 @@ export default function Contato() {
       <div className="container-default">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
-            Entre em Contato
+            Entre em{" "}
+            <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+              Contato
+            </span>
           </h2>
           <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
             Estamos prontos para ajudá-lo. Entre em contato conosco para uma
@@ -122,9 +125,9 @@ export default function Contato() {
                   >
                     <div className="card-glass p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 group-hover:-translate-y-1">
                       <div className="flex items-start space-x-4">
-                        <div className="bg-accent/20 p-3 rounded-2xl group-hover:bg-accent/30 transition-all duration-300">
+                        <div className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] p-3 rounded-2xl group-hover:from-[#b8794c] group-hover:to-[#d4956a] transition-all duration-300">
                           <IconComponent
-                            className="h-6 w-6 text-accent"
+                            className="h-6 w-6 text-white"
                             aria-hidden="true"
                           />
                         </div>
@@ -148,10 +151,9 @@ export default function Contato() {
 
             <div className="card-glass p-6 border border-accent/20">
               <div className="flex items-center mb-4">
-                <Clock
-                  className="h-5 w-5 text-accent mr-3"
-                  aria-hidden="true"
-                />
+                <div className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] p-2 rounded-lg mr-3">
+                  <Clock className="h-5 w-5 text-white" aria-hidden="true" />
+                </div>
                 <span className="font-bold text-primary">
                   Horário de Atendimento
                 </span>
@@ -306,7 +308,7 @@ export default function Contato() {
 
                 <button
                   type="submit"
-                  className="btn-primary w-full flex items-center justify-center space-x-3 text-lg group"
+                  className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] hover:from-[#b8794c] hover:to-[#d4956a] text-white px-8 py-4 rounded-2xl font-bold uppercase tracking-wide transition-all duration-300 w-full flex items-center justify-center space-x-3 text-lg group shadow-lg hover:shadow-xl"
                 >
                   <Send
                     className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
@@ -323,10 +325,12 @@ export default function Contato() {
         <div className="text-center animate-fade-in-up animate-delay-400">
           <div className="card-glass border border-red-500/30 p-8 lg:p-12 max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-6">
-              <AlertTriangle
-                className="h-8 w-8 text-red-400 mr-4"
-                aria-hidden="true"
-              />
+              <div className="bg-gradient-to-r from-red-500 to-red-400 p-2 rounded-lg mr-4">
+                <AlertTriangle
+                  className="h-8 w-8 text-white"
+                  aria-hidden="true"
+                />
+              </div>
               <h4 className="text-2xl font-bold text-red-400">
                 Situação de Emergência?
               </h4>

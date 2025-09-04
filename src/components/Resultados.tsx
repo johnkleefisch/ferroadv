@@ -1,7 +1,6 @@
 import {
   TrendingUp,
   Users,
-  Clock,
   Unlock,
   ArrowDown,
   AlertTriangle,
@@ -65,7 +64,10 @@ export default function Resultados() {
       <div className="container-default">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 font-sans">
-            Resultados que Falam por Si
+            Resultados que{" "}
+            <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+              Falam por Si
+            </span>
           </h2>
         </div>
 
@@ -98,14 +100,8 @@ export default function Resultados() {
                   }}
                 />
                 {/* Ícone lúdico centralizado */}
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #cc8c5d 0%, #b8794c 100%)",
-                  }}
-                >
-                  <Icon className="h-7 w-7 text-slate-900" strokeWidth={1.5} />
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] group-hover:from-[#b8794c] group-hover:to-[#d4956a] transition-all duration-300">
+                  <Icon className="h-7 w-7 text-white" strokeWidth={1.5} />
                 </div>
                 <div className="text-5xl font-bold text-accent mb-2 font-sans">
                   {item.number}
