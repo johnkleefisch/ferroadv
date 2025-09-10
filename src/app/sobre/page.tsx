@@ -1,11 +1,18 @@
 import { Metadata } from "next";
 import {
-  Quote,
   Phone,
   MessageCircle,
   Award,
   BookOpen,
   Shield,
+  Quote,
+  FileText,
+  Users,
+  Target,
+  Heart,
+  Scale,
+  Clock,
+  TrendingUp,
 } from "lucide-react";
 import Image from "next/image";
 import Header from "@/components/Header";
@@ -31,9 +38,9 @@ export default function SobrePage() {
     <>
       <Header />
       <div className="min-h-screen bg-slate-900">
-        {/* 1. Hero Section Minimalista */}
+        {/* Hero Section */}
         <section
-          className="relative py-20 lg:py-32 overflow-hidden"
+          className="relative min-h-[70vh] flex items-center text-white overflow-hidden"
           style={{
             backgroundImage: "url('/images/escritorio-background.jpg')",
             backgroundSize: "cover",
@@ -41,199 +48,1121 @@ export default function SobrePage() {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-900/90 to-slate-800/85"></div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="absolute inset-0 bg-slate-900/90"></div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Conteúdo Principal */}
               <div className="space-y-8">
                 <div>
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-                    Dra. <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">Diulliany Ferro</span>
+                  <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#cc8c5d]/20 to-[#f3c793]/10 rounded-full mb-6">
+                    <span className="text-[#cc8c5d] text-sm font-medium">
+                      Especialista em Direito Criminal
+                    </span>
+                  </div>
+
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                    Dra.{" "}
+                    <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+                      Diulliany Ferro
+                    </span>
                   </h1>
-                  <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent font-semibold mb-8">
-                    Especialista em Defesa Criminal
-                  </h2>
-                  <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                    <strong>15 anos de dedicação exclusiva</strong> ao Direito Criminal com expertise em casos complexos e resultados comprovados.
+
+                  <p className="text-xl text-gray-300 leading-relaxed mt-6">
+                    Uma trajetória de{" "}
+                    <strong className="text-[#cc8c5d]">15 anos</strong> dedicada
+                    exclusivamente à defesa criminal com{" "}
+                    <strong className="text-[#cc8c5d]">
+                      resultados comprovados
+                    </strong>
+                    .
                   </p>
-                  
-                  {/* Citação da Advogada */}
-                  <div className="bg-gradient-to-r from-slate-800/60 to-slate-700/40 p-6 rounded-xl border border-[#cc8c5d]/20 mb-8">
-                    <Quote className="h-8 w-8 text-[#cc8c5d] mb-4" />
-                    <p className="text-lg text-gray-200 italic leading-relaxed mb-4">
-                      &ldquo;Cada cliente merece uma defesa técnica de excelência. Minha missão é garantir os melhores resultados com ética e dedicação total.&rdquo;
-                    </p>
-                    <p className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent font-bold">- Dra. Diulliany Ferro, OAB/GO</p>
+                </div>
+
+                <div className="grid grid-cols-3 gap-6">
+                  <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-4 text-center border border-slate-700">
+                    <div className="text-2xl md:text-3xl font-bold text-accent mb-1">
+                      15+
+                    </div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wide">
+                      Anos
+                    </div>
+                  </div>
+                  <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-4 text-center border border-slate-700">
+                    <div className="text-2xl md:text-3xl font-bold text-accent mb-1">
+                      24h
+                    </div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wide">
+                      Atendimento
+                    </div>
+                  </div>
+                  <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-4 text-center border border-slate-700">
+                    <div className="text-2xl md:text-3xl font-bold text-accent mb-1">
+                      95%
+                    </div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wide">
+                      Sucesso
+                    </div>
                   </div>
                 </div>
 
-                {/* Botões de Ação */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="https://wa.me/5562995292129"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] hover:from-[#b8794c] hover:to-[#d4956a] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 text-center flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl"
+                    className="bg-gradient-to-r from-[#cc8c5d] to-[#d4956a] hover:from-[#b8794c] hover:to-[#c88759] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 inline-flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl"
                   >
-                    <MessageCircle className="h-6 w-6" />
-                    <span>Conversar Agora</span>
+                    <MessageCircle className="h-5 w-5" />
+                    <span>CONVERSAR AGORA</span>
                   </a>
                   <a
-                    href="#qualificacoes"
-                    className="border-2 border-[#cc8c5d] text-[#cc8c5d] hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#f3c793] hover:text-white hover:border-transparent px-8 py-4 rounded-lg font-bold transition-all duration-300 text-center"
+                    href="tel:+5562995292129"
+                    className="border-2 border-[#cc8c5d] text-[#cc8c5d] hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#f3c793] hover:text-white hover:border-transparent px-8 py-4 rounded-lg font-bold transition-all duration-300 inline-flex items-center justify-center space-x-3"
                   >
-                    Conhecer Experiência
+                    <Phone className="h-5 w-5" />
+                    <span>LIGAR AGORA</span>
                   </a>
                 </div>
               </div>
 
-              {/* Foto Principal */}
               <div className="relative">
-                <div className="relative w-full max-w-lg mx-auto">
-                  <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative max-w-lg mx-auto">
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative backdrop-blur-md">
+                    <div className="absolute inset-0 backdrop-blur-md bg-black/20"></div>
                     <Image
                       src="/images/diulliany-ferro.png"
-                      alt="Dra. Diulliany Ferro - Especialista em Direito Criminal"
+                      alt="Dra. Diulliany Ferro"
                       fill
-                      className="object-cover"
+                      className="object-cover object-top relative z-10"
                       priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   </div>
-                  
-                  {/* Elementos decorativos com gradiente */}
-                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-[#cc8c5d]/30 to-[#f3c793]/20 rounded-full blur-lg"></div>
-                  <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-r from-[#f3c793]/25 to-[#cc8c5d]/30 rounded-full blur-lg"></div>
+
+                  <div className="absolute bottom-2 right-2 bg-slate-800/80 backdrop-blur-sm rounded-md px-3 py-2 border border-slate-600/50 z-20">
+                    <h3 className="font-semibold text-white text-sm">
+                      Dra. Diulliany Ferro
+                    </h3>
+                    <p className="text-accent font-medium text-sm">OAB/GO</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 2. Expertise Resumida */}
-        <section id="qualificacoes" className="py-20 bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900">
+        {/* Formação, Credenciais e Citação */}
+        <section
+          className="py-20"
+          style={{
+            background:
+              "linear-gradient(135deg, #10172a 0%, #334154 50%, #10172a 100%)",
+          }}
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">Expertise</span> Especializada
+                Formação e{" "}
+                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+                  Credenciais
+                </span>
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Formação sólida e dedicação exclusiva ao Direito Criminal
+                Uma base sólida de conhecimento jurídico aliada à experiência
+                prática
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {/* Card Graduação */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
+              >
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
+                    <BookOpen
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    Graduação
+                  </h3>
+                </div>
+
+                {/* Descrição */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                  Formação sólida em Direito com base jurídica completa para
+                  atuação na área criminal.
+                </p>
+
+                {/* Detalhes da Formação */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Universidade Federal de Goiás
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Bacharel em Direito
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Concluído em 2008
+                    </span>
+                  </div>
+                </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
+              </div>
+
+              {/* Card Especialização */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
+              >
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
+                    <Award
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    Especialização
+                  </h3>
+                </div>
+
+                {/* Descrição */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                  Aperfeiçoamento técnico focado exclusivamente no Direito Penal
+                  e Processual Penal.
+                </p>
+
+                {/* Detalhes da Especialização */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Direito Penal e Processual Penal
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Pós-graduação Lato Sensu
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Concluído em 2010
+                    </span>
+                  </div>
+                </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
+              </div>
+
+              {/* Card CDCRIM */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
+              >
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
+                    <Shield
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    CDCRIM
+                  </h3>
+                </div>
+
+                {/* Descrição */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                  Membro ativo da Comissão de Direito Criminal da Ordem dos
+                  Advogados do Brasil.
+                </p>
+
+                {/* Detalhes do CDCRIM */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Comissão de Direito Criminal
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Membro Ativo OAB/GO
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Participação em estudos técnicos
+                    </span>
+                  </div>
+                </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Citação */}
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-r from-slate-800/60 to-slate-700/40 backdrop-blur-sm p-8 rounded-2xl border border-[#cc8c5d]/20">
+                <Quote className="h-12 w-12 text-[#cc8c5d] mx-auto mb-6" />
+                <blockquote className="text-2xl md:text-3xl text-white font-light italic leading-relaxed mb-6 text-center">
+                  &ldquo;A advocacia criminal é mais que uma profissão - é uma
+                  missão de defender direitos fundamentais e garantir que a
+                  justiça seja feita com dignidade e competência técnica.&rdquo;
+                </blockquote>
+                <cite className="text-lg bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent font-semibold text-center block">
+                  Dra. Diulliany Ferro, OAB/GO
+                </cite>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Modo de Trabalho */}
+        <section
+          className="py-20"
+          style={{
+            background:
+              "linear-gradient(135deg, #334154 0%, #10172a 50%, #334154 100%)",
+          }}
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Como{" "}
+                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+                  Trabalhamos
+                </span>
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                Um processo estruturado e transparente para garantir os melhores
+                resultados
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Card 1: Primeiro Contato */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
+              >
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
+                    <MessageCircle
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    1. Primeiro Contato
+                  </h3>
+                </div>
+
+                {/* Descrição */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                  Análise inicial do caso, orientações emergenciais e definição
+                  da estratégia de defesa mais adequada.
+                </p>
+
+                {/* Detalhes */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Consulta gratuita
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Atendimento 24h
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Análise do caso
+                    </span>
+                  </div>
+                </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
+              </div>
+
+              {/* Card 2: Plano Jurídico */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
+              >
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
+                    <FileText
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    2. Plano Jurídico
+                  </h3>
+                </div>
+
+                {/* Descrição */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                  Elaboração de estratégia personalizada com cronograma, prazos
+                  e expectativas realistas para o caso.
+                </p>
+
+                {/* Detalhes */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Estratégia personalizada
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Cronograma detalhado
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Expectativas realistas
+                    </span>
+                  </div>
+                </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
+              </div>
+
+              {/* Card 3: Execução */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
+              >
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
+                    <Scale
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    3. Execução
+                  </h3>
+                </div>
+
+                {/* Descrição */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                  Implementação da defesa com petições, recursos, audiências e
+                  todas as medidas necessárias.
+                </p>
+
+                {/* Detalhes */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Petições e recursos
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Audiências e júri
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Medidas cautelares
+                    </span>
+                  </div>
+                </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
+              </div>
+
+              {/* Card 4: Acompanhamento */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
+              >
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
+                    <Users
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    4. Acompanhamento
+                  </h3>
+                </div>
+
+                {/* Descrição */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                  Monitoramento constante do processo com atualizações regulares
+                  e suporte contínuo.
+                </p>
+
+                {/* Detalhes */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Atualizações regulares
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Suporte contínuo
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Monitoramento total
+                    </span>
+                  </div>
+                </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Missão e Pilares */}
+        <section
+          className="py-20"
+          style={{
+            background:
+              "linear-gradient(135deg, #10172a 0%, #334154 50%, #10172a 100%)",
+          }}
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Nossa{" "}
+                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+                  Missão
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-12">
+                Defender os direitos fundamentais com excelência técnica, ética
+                profissional e dedicação total, garantindo que cada cliente
+                receba a melhor defesa possível em momentos críticos.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700/50 hover:border-[#cc8c5d]/30 transition-all duration-300 backdrop-blur-sm">
-                <div className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] p-4 rounded-xl mx-auto mb-6 w-fit shadow-lg">
-                  <Award className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent mb-4">
-                  Especialista Criminal
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Pós-graduação em Direito Penal e 15 anos de experiência exclusiva em defesa criminal
-                </p>
-              </div>
+              {/* Card 1: Ética e Integridade */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
+              >
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
 
-              <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700/50 hover:border-[#cc8c5d]/30 transition-all duration-300 backdrop-blur-sm">
-                <div className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] p-4 rounded-xl mx-auto mb-6 w-fit shadow-lg">
-                  <Shield className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent mb-4">
-                  Membro CDCRIM
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Participação ativa na Comissão de Direito Criminal da OAB/GO
-                </p>
-              </div>
-
-              <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700/50 hover:border-[#cc8c5d]/30 transition-all duration-300 backdrop-blur-sm">
-                <div className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] p-4 rounded-xl mx-auto mb-6 w-fit shadow-lg">
-                  <BookOpen className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent mb-4">
-                  Tribunal do Júri
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Ampla experiência em defesas no plenário do júri e casos complexos
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. Segunda Foto + Sobre */}
-        <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Segunda Foto */}
-              <div className="relative order-2 lg:order-1">
-                <div className="relative w-full max-w-lg mx-auto">
-                  <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl">
-                    <Image
-                      src="/images/diulliany-about.webp"
-                      alt="Dra. Diulliany Ferro em seu escritório"
-                      fill
-                      className="object-cover"
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
+                    <Shield
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   </div>
-                  
-                  {/* Badge com gradiente */}
-                  <div className="absolute -top-4 -right-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] p-4 rounded-xl shadow-xl">
-                    <div className="text-center">
-                      <div className="text-white font-bold text-lg">CDCRIM</div>
-                      <div className="text-white text-xs">OAB/GO</div>
-                    </div>
-                  </div>
-
-                  {/* Efeitos de fundo */}
-                  <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-r from-[#cc8c5d]/20 to-[#f3c793]/10 rounded-full blur-2xl"></div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    Ética e Integridade
+                  </h3>
                 </div>
+
+                {/* Descrição */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                  Conduta pautada pelos mais altos padrões éticos, sempre
+                  respeitando o sigilo profissional e a dignidade do cliente.
+                </p>
+
+                {/* Detalhes */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Padrões éticos rigorosos
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Sigilo profissional absoluto
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Dignidade do cliente
+                    </span>
+                  </div>
+                </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
               </div>
 
-              {/* Conteúdo */}
-              <div className="space-y-8 order-1 lg:order-2">
-                <div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                    <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">Trajetória</span> Profissional
-                  </h2>
-                  
-                  <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
-                    <p>
-                      Formada em Direito pela <strong className="text-[#cc8c5d]">Universidade Federal de Goiás</strong> em 2008, a Dra. Diulliany Ferro dedicou sua carreira exclusivamente ao <strong className="text-[#cc8c5d]">Direito Criminal</strong>.
-                    </p>
-                    
-                    <p>
-                      Com <strong className="text-[#cc8c5d]">pós-graduação em Direito Penal</strong> e <strong className="text-[#cc8c5d]">participação ativa na CDCRIM-OAB/GO</strong>, construiu uma sólida reputação baseada em resultados efetivos e ética profissional.
-                    </p>
-                    
-                    <p>
-                      Especialista em <strong className="text-[#cc8c5d]">Tribunal do Júri</strong>, <strong className="text-[#cc8c5d]">Lei de Drogas</strong> e <strong className="text-[#cc8c5d]">crimes complexos</strong>, oferece defesa técnica de alto nível com atendimento humanizado.
-                    </p>
+              {/* Card 2: Excelência Técnica */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
+              >
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
+                    <Target
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    Excelência Técnica
+                  </h3>
+                </div>
+
+                {/* Descrição */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                  Conhecimento jurídico sólido, atualização constante e
+                  estratégias personalizadas para cada caso específico.
+                </p>
+
+                {/* Detalhes */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Conhecimento jurídico sólido
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Atualização constante
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Estratégias personalizadas
+                    </span>
                   </div>
                 </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
+              </div>
+
+              {/* Card 3: Compromisso Humano */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group"
+                style={{
+                  backgroundColor: "#242b38",
+                  background: `
+                    linear-gradient(135deg, 
+                      rgba(204, 140, 93, 0.03) 0%, 
+                      rgba(204, 140, 93, 0.01) 25%, 
+                      transparent 50%
+                    ),
+                    #242b38
+                  `,
+                  border: "1px solid rgba(204, 140, 93, 0.08)",
+                  boxShadow: `
+                    0 4px 20px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                  `,
+                }}
+              >
+                {/* Efeito de Brilho Superior Esquerdo */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
+                  }}
+                />
+
+                {/* Ícone e Título na mesma linha */}
+                <div className="flex items-center mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793]">
+                    <Heart
+                      className="h-7 w-7 text-slate-900"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-inter">
+                    Compromisso Humano
+                  </h3>
+                </div>
+
+                {/* Descrição */}
+                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                  Atendimento humanizado, disponibilidade integral e
+                  acompanhamento dedicado em todos os momentos.
+                </p>
+
+                {/* Detalhes */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Atendimento humanizado
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Disponibilidade integral
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <div
+                      className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
+                      style={{ backgroundColor: "#cc8c5d" }}
+                    />
+                    <span className="text-sm font-normal text-white/90">
+                      Acompanhamento dedicado
+                    </span>
+                  </div>
+                </div>
+
+                {/* Linha separadora dourada */}
+                <div
+                  className="w-full h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                    opacity: 0.3,
+                  }}
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* 4. Call to Action Final */}
-        <section className="py-20 bg-gradient-to-r from-[#cc8c5d] via-[#d49968] to-[#f3c793]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* CTA Final */}
+        <section className="py-20 bg-gradient-to-r from-[#cc8c5d] via-[#d49968] to-[#f3c793] relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Defesa Criminal Especializada
+              Sua Defesa Merece o Melhor
             </h2>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Quando sua liberdade está em risco, você precisa de uma advocacia de excelência.<br />
-              <strong>Consulta inicial gratuita.</strong>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
+              Em momentos críticos, você precisa de uma advocacia que combine
+              experiência, competência técnica e dedicação total.{" "}
+              <strong>A consulta inicial é gratuita.</strong>
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
               <a
                 href="tel:+5562995292129"
-                className="bg-white text-[#cc8c5d] px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center space-x-3 text-lg shadow-lg hover:shadow-xl"
+                className="bg-white text-[#cc8c5d] px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center space-x-3 text-lg shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 <Phone className="h-6 w-6" />
                 <span>(62) 99529-2129</span>
@@ -242,20 +1171,27 @@ export default function SobrePage() {
                 href="https://wa.me/5562995292129"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 flex items-center justify-center space-x-3 text-lg shadow-lg hover:shadow-xl"
+                className="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center space-x-3 text-lg shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 <MessageCircle className="h-6 w-6" />
                 <span>WhatsApp</span>
               </a>
             </div>
-            
-            <p className="text-white/80 text-sm mt-6">
-              Atendimento 24h para emergências • Primeira consulta gratuita
-            </p>
+
+            <div className="text-white/80">
+              <p className="text-sm">
+                📞 Atendimento 24 horas para emergências
+                <br />
+                💬 Primeira consulta gratuita e confidencial
+                <br />
+                ⚖️ Acompanhamento completo do seu processo
+              </p>
+            </div>
           </div>
         </section>
+
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

@@ -297,4 +297,28 @@ h6 {
   ::-webkit-scrollbar-thumb:hover {
     background: var(--color-accent-hover);
   }
+
+  /* Glassmorphism Effects */
+  .glass-effect {
+    background: rgba(
+      51,
+      65,
+      84,
+      0.1
+    ); /* Fundo azul (#334154) com 10% de opacidade */
+    backdrop-filter: blur(
+      10px
+    ); /* Desfoque do que está atrás, criando o efeito de vidro fosco */
+    border: 1px solid rgba(204, 140, 93, 0.1); /* Borda sutil no tom dourado com 10% de opacidade */
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(204, 140, 93, 0.3); /* Sombra dourada suave */
+    transform: translateY(-2px); /* Leve elevação do card */
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
 }

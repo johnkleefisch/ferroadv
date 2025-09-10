@@ -1,0 +1,12 @@
+Vou criar os 3 cards restantes:
+
+1. Audiências e Julgamentos
+2. Habeas Corpus  
+3. Atendimentos de Urgência
+
+Para cada um preciso:
+- Ícone apropriado
+- Título
+- Parágrafo descritivo
+- Lista de 6 serviços específicos
+- Mesma estrutura visual
