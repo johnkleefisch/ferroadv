@@ -2,7 +2,17 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, FileText, Clock, TrendingUp } from "lucide-react";
+import {
+  MessageCircle,
+  FileText,
+  Clock,
+  TrendingUp,
+  Phone,
+  Scale,
+  CheckCircle,
+  Zap,
+} from "lucide-react";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 export default function Hero() {
   return (
@@ -45,7 +55,7 @@ export default function Hero() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                 Defesa Criminal
                 <br />
-                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
                   Ágil e Especializada
                 </span>
               </h1>
@@ -66,58 +76,66 @@ export default function Hero() {
                 href="https://wa.me/5511999999999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-[#cc8c5d] to-[#d4956a] hover:from-[#b8794c] hover:to-[#c88759] text-white px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
+                className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] hover:from-[#b8794c] hover:to-[#d4a269] text-[#10172a] px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl overflow-hidden group"
               >
-                <MessageCircle className="h-4 w-4" />
-                <span>INICIAR ATENDIMENTO</span>
+                {/* Gradiente sutil overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/5 to-white/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <WhatsAppIcon className="h-6 w-6 relative z-10" />
+                <span className="relative z-10">INICIAR ATENDIMENTO</span>
               </Link>
 
-              <Link
-                href="#areas"
-                className="border-2 text-accent hover:text-white px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                style={{ borderColor: "#cc8c5d" }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#cc8c5d";
-                  e.currentTarget.style.borderColor = "#cc8c5d";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "transparent";
-                  e.currentTarget.style.borderColor = "#cc8c5d";
-                }}
-              >
-                <FileText className="h-4 w-4" />
-                <span>VER ÁREAS DE ATUAÇÃO</span>
-              </Link>
+              <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group">
+                <Link
+                  href="tel:062995292129"
+                  className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-6 py-3 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 w-full"
+                >
+                  <Phone className="h-5 w-5 text-[#cc8c5d] group-hover:text-[#10172a] transition-colors duration-300" />
+                  <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent group-hover:text-[#10172a]">
+                    LIGAR AGORA
+                  </span>
+                </Link>
+              </div>
             </div>
 
             {/* Statistics Cards */}
-            <div className="grid grid-cols-3 gap-3 pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-xl mx-auto pt-6">
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700">
-                <div className="text-xl md:text-2xl font-bold text-accent mb-1">
-                  +200
-                </div>
-                <div className="text-xs text-gray-400 uppercase tracking-wide">
-                  Casos Atendidos
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center gap-1">
+                    <Scale className="h-5 w-5 text-[#cc8c5d]/70" />
+                    <div className="text-xl md:text-2xl font-bold text-[#cc8c5d]">
+                      500+
+                    </div>
+                  </div>
+                  <div className="text-xs text-gray-400 uppercase tracking-wide">
+                    Casos de Sucesso
+                  </div>
                 </div>
               </div>
-
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700">
-                <div className="text-xl md:text-2xl font-bold text-accent mb-1 flex items-center justify-center">
-                  <Clock className="h-5 w-5 mr-1" />
-                  24h
-                </div>
-                <div className="text-xs text-gray-400 uppercase tracking-wide">
-                  Plantão de Atendimento
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center gap-1">
+                    <CheckCircle className="h-5 w-5 text-[#cc8c5d]/70" />
+                    <div className="text-xl md:text-2xl font-bold text-[#cc8c5d]">
+                      99%
+                    </div>
+                  </div>
+                  <div className="text-xs text-gray-400 uppercase tracking-wide">
+                    Clientes Satisfeitos
+                  </div>
                 </div>
               </div>
-
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700">
-                <div className="text-xl md:text-2xl font-bold text-accent mb-1 flex items-center justify-center">
-                  <TrendingUp className="h-5 w-5 mr-1" />
-                  95%
-                </div>
-                <div className="text-xs text-gray-400 uppercase tracking-wide">
-                  Taxa de Sucesso
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center gap-1">
+                    <Zap className="h-5 w-5 text-[#cc8c5d]/70" />
+                    <div className="text-xl md:text-2xl font-bold text-[#cc8c5d]">
+                      24h
+                    </div>
+                  </div>
+                  <div className="text-xs text-gray-400 uppercase tracking-wide">
+                    Atendimento Imediato
+                  </div>
                 </div>
               </div>
             </div>
@@ -147,8 +165,8 @@ export default function Hero() {
                   <h3 className="font-semibold text-white text-xs">
                     Dra. Diulliany Ferro
                   </h3>
-                  <p className="text-accent font-medium text-xs">
-                    OAB/SP 123.456
+                  <p className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent font-medium text-xs">
+                    OAB/GO 66.387
                   </p>
                 </div>
               </div>

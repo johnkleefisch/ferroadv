@@ -39,7 +39,7 @@ export default function Header() {
             <div className="relative mr-3 flex items-center justify-center">
               <div className="relative">
                 {/* Elegant Circular Frame */}
-                <div className="w-12 h-12 rounded-full border-2 border-[#cc8c5d] flex items-center justify-center bg-gradient-to-br from-[#cc8c5d]/10 to-[#b8794c]/10">
+                <div className="w-12 h-12 rounded-full border-2 border-[#cc8c5d] flex items-center justify-center bg-slate-900">
                   {/* Justice Scale Icon */}
                   <Scale className="h-6 w-6 text-[#cc8c5d]" />
                 </div>
@@ -48,12 +48,20 @@ export default function Header() {
 
             {/* Typography */}
             <div className="leading-none">
-              <h1 className="text-lg font-bold text-white tracking-wider uppercase mb-0.5">
+              <h1 className="text-xl font-bold text-white tracking-wider uppercase mb-0.5">
                 DIULLIANY FERRO
               </h1>
-              <p className="text-xs text-[#cc8c5d] font-normal uppercase tracking-[0.15em]">
-                ADVOCACIA
-              </p>
+              <div className="flex items-center gap-1">
+                {/* Linha esquerda */}
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#cc8c5d]"></div>
+
+                <p className="text-sm bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent font-normal uppercase tracking-[0.15em] px-1">
+                  ADVOCACIA
+                </p>
+
+                {/* Linha direita */}
+                <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#cc8c5d]"></div>
+              </div>
             </div>
           </Link>
 
@@ -108,13 +116,17 @@ export default function Header() {
           {/* Elegant CTA */}
           <div className="hidden lg:block">
             {/* Número da Advogada - Botão Estilo Hero */}
-            <Link
-              href="tel:+5562995292129"
-              className="border-2 border-[#cc8c5d] text-[#cc8c5d] hover:text-white hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#d4956a] px-4 py-2 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 text-sm hover:shadow-lg"
-            >
-              <Phone className="h-4 w-4" />
-              <span className="font-bold">(62) 99529-2129</span>
-            </Link>
+            <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group">
+              <Link
+                href="tel:+5562995292129"
+                className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-4 py-2 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 text-sm"
+              >
+                <Phone className="h-4 w-4 text-[#cc8c5d] group-hover:text-[#10172a] transition-colors duration-300" />
+                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent group-hover:text-[#10172a]">
+                  (62) 99529-2129
+                </span>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}
