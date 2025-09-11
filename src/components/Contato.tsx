@@ -342,62 +342,6 @@ export default function Contato() {
             </div>
           </div>
         </div>
-
-        {/* Emergência */}
-        <div className="text-center animate-fade-in-up animate-delay-400">
-          <div
-            className="relative overflow-hidden rounded-2xl transition-all duration-300 group p-8 lg:p-12 max-w-4xl mx-auto"
-            style={{
-              backgroundColor: "#1a1f2e",
-              background: `
-                linear-gradient(135deg, 
-                  rgba(239, 68, 68, 0.05) 0%, 
-                  rgba(239, 68, 68, 0.02) 25%, 
-                  transparent 50%
-                ),
-                #1a1f2e
-              `,
-              border: "1px solid rgba(239, 68, 68, 0.2)",
-              boxShadow: `
-                0 4px 20px rgba(239, 68, 68, 0.1),
-                inset 0 1px 0 rgba(239, 68, 68, 0.05)
-              `,
-            }}
-          >
-            {/* Efeito de Brilho Superior Esquerdo */}
-            <div
-              className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
-              style={{
-                background:
-                  "radial-gradient(circle at 0% 0%, rgba(239, 68, 68, 0.15) 0%, transparent 70%)",
-              }}
-            />
-
-            <div className="flex items-center justify-center mb-6 relative z-10">
-              <AlertTriangle
-                className="h-8 w-8 text-red-400 mr-4"
-                aria-hidden="true"
-              />
-              <h4 className="text-2xl font-bold text-red-400">
-                Situação de Emergência?
-              </h4>
-            </div>
-            <p className="text-white mb-8 text-lg leading-relaxed relative z-10">
-              Se você foi preso, está sendo procurado ou precisa de atendimento
-              urgente, entre em contato imediatamente:
-            </p>
-            <a
-              href="tel:+5511999999999"
-              className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-2xl font-bold uppercase tracking-wide transition-all duration-300 hover:shadow-lg hover:-translate-y-1 inline-flex items-center space-x-3 text-lg group/emergency relative z-10"
-            >
-              <Phone
-                className="h-6 w-6 group-hover/emergency:scale-110 transition-transform duration-300"
-                aria-hidden="true"
-              />
-              <span>Ligar Agora - Emergência 24h</span>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

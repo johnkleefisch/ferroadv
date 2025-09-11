@@ -25,7 +25,7 @@ export default function Header() {
       ],
     },
     { name: "Artigos", href: "/artigos" },
-    { name: "Contato", href: "/#contato" },
+    { name: "Contato", href: "/contato" },
   ];
 
   return (
