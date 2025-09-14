@@ -107,7 +107,7 @@ export function AreasDeAtuacaoClient() {
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Áreas de{" "}
-                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
                   Atuação
                 </span>
               </h1>
@@ -238,10 +238,12 @@ export function AreasDeAtuacaoClient() {
                     {/* Ícone + Título do Macro Serviço */}
                     <div className="flex items-center gap-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-[#cc8c5d] to-[#f3c793] rounded-lg flex items-center justify-center">
-                        <Shield
-                          className="h-8 w-8 text-[#10172a]"
-                          strokeWidth={2}
-                        />
+                        <div className="w-full h-full bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] rounded-lg flex items-center justify-center">
+                          <Shield
+                            className="h-8 w-8 text-[#10172a]"
+                            strokeWidth={2}
+                          />
+                        </div>
                       </div>
                       <h2 className="text-3xl font-bold text-white">
                         Crimes Contra a Vida
@@ -332,10 +334,12 @@ export function AreasDeAtuacaoClient() {
                             className="glass-effect rounded-lg p-4 flex items-center gap-3 border border-[#cc8c5d]/10"
                           >
                             <div className="w-6 h-6 bg-[#cc8c5d] rounded-full flex items-center justify-center flex-shrink-0">
-                              <CheckCircle
-                                className="h-4 w-4 text-[#10172a]"
-                                strokeWidth={2}
-                              />
+                              <div className="w-full h-full bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] rounded-full flex items-center justify-center">
+                                <CheckCircle
+                                  className="h-4 w-4 text-[#10172a]"
+                                  strokeWidth={2}
+                                />
+                              </div>
                             </div>
                             <span className="text-white font-medium text-sm">
                               {service}

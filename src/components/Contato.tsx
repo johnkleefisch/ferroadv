@@ -6,10 +6,10 @@ import {
   Mail,
   MapPin,
   Clock,
-  MessageCircle,
   AlertTriangle,
   Navigation,
 } from "lucide-react";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 export default function Contato() {
   const contatos = [
@@ -20,7 +20,7 @@ export default function Contato() {
       link: "tel:+5511999999999",
     },
     {
-      icon: MessageCircle,
+      icon: WhatsAppIcon,
       titulo: "WhatsApp",
       info: "(11) 99999-9999",
       link: "https://wa.me/5511999999999",
@@ -78,11 +78,14 @@ export default function Contato() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Entre em Contato
+            Entre em{" "}
+            <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
+              Contato
+            </span>
           </h2>
-          <p className="text-lg font-light text-white max-w-4xl mx-auto leading-relaxed">
-            Estamos prontos para ajudá-lo. Entre em contato conosco para uma
-            consulta inicial gratuita e confidencial
+          <p className="text-white/90 mb-8 text-lg leading-relaxed">
+            Estamos prontos para ajudá-lo. Entre em contato conosco para
+            avaliação inicial do seu caso, com total confidencialidade.
           </p>
         </div>
 
@@ -147,7 +150,7 @@ export default function Contato() {
                           className="p-3 rounded-xl group-hover/item:scale-110 transition-all duration-300"
                           style={{
                             background:
-                              "linear-gradient(135deg, #cc8c5d 0%, #b8794c 100%)",
+                              "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
                           }}
                         >
                           <IconComponent
@@ -166,7 +169,13 @@ export default function Contato() {
                         {(contato.titulo === "Telefone" ||
                           contato.titulo === "WhatsApp") && (
                           <div className="flex-shrink-0">
-                            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-[#cc8c5d] text-slate-900">
+                            <span
+                              className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold text-slate-900"
+                              style={{
+                                background:
+                                  "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
+                              }}
+                            >
                               24h
                             </span>
                           </div>
@@ -193,7 +202,15 @@ export default function Contato() {
                     <span className="text-[#cc8c5d] font-semibold">
                       Emergências:
                     </span>
-                    <span className="text-[#cc8c5d] font-semibold">24h</span>
+                    <span
+                      className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold text-slate-900"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
+                      }}
+                    >
+                      24h
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-white/70">Segunda a Sexta:</span>
@@ -202,17 +219,29 @@ export default function Contato() {
                 </div>
               </div>
 
-              {/* Botão de Ação */}
-              <div className="mt-8 relative z-50">
+              {/* Botões de Ação */}
+              <div className="mt-8 relative z-50 flex gap-3">
                 <button
                   data-whatsapp="iniciarAtendimento"
                   onClick={handleWhatsAppClick}
-                  className="w-full text-white px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 bg-[#cc8c5d] hover:bg-[#b8794c] group/agenda cursor-pointer"
+                  className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] hover:from-[#b8794c] hover:to-[#d4a269] text-[#10172a] px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl overflow-hidden group cursor-pointer flex-1"
                   style={{ zIndex: 50 }}
                 >
-                  <MessageCircle className="h-5 w-5 group-hover/agenda:scale-110 transition-transform duration-300" />
-                  <span>Iniciar Atendimento</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/5 to-white/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <WhatsAppIcon className="h-5 w-5 relative z-10" />
+                  <span className="relative z-10">INICIAR ATENDIMENTO</span>
                 </button>
+                <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group flex-1">
+                  <a
+                    href="tel:+5562995292129"
+                    className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-6 py-3 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 w-full"
+                  >
+                    <Phone className="h-5 w-5 text-[#cc8c5d] group-hover:text-[#10172a] transition-colors duration-300" />
+                    <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent group-hover:text-[#10172a]">
+                      LIGAR AGORA
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -259,7 +288,7 @@ export default function Contato() {
                       className="p-3 rounded-xl"
                       style={{
                         background:
-                          "linear-gradient(135deg, #cc8c5d 0%, #b8794c 100%)",
+                          "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
                       }}
                     >
                       <MapPin
@@ -329,15 +358,19 @@ export default function Contato() {
                 </div>
 
                 {/* Botão para Abrir no Google Maps */}
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${coordenadas}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-white px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 bg-[#cc8c5d] hover:bg-[#b8794c] group/nav"
-                >
-                  <Navigation className="h-5 w-5 group-hover/nav:scale-110 transition-transform duration-300" />
-                  <span>Abrir no Google Maps</span>
-                </a>
+                <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group w-full">
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${coordenadas}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-6 py-3 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 w-full"
+                  >
+                    <Navigation className="h-5 w-5 text-[#cc8c5d] group-hover:text-[#10172a] transition-colors duration-300" />
+                    <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent group-hover:text-[#10172a]">
+                      Abrir no Google Maps
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
