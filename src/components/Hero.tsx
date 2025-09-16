@@ -13,6 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
+import WhatsAppPopup from "./WhatsAppPopup";
 
 export default function Hero() {
   return (
@@ -43,8 +44,11 @@ export default function Hero() {
         className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
         aria-label="Contato via WhatsApp"
       >
-        <MessageCircle className="h-6 w-6" />
+        <WhatsAppIcon className="h-7 w-7" />
       </Link>
+
+      {/* WhatsApp Popup */}
+      <WhatsAppPopup />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
