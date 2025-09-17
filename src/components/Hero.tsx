@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -14,8 +15,27 @@ import {
 } from "lucide-react";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
 import WhatsAppPopup from "./WhatsAppPopup";
+import { startWhatsappConversation } from "@/utils/whatsapp";
+import { forcarDiscador } from "@/utils/telefone";
 
 export default function Hero() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleFloatingButtonClick = () => {
+    console.log("Button clicked, current showPopup:", showPopup);
+    if (showPopup) {
+      console.log("Closing popup");
+      setShowPopup(false);
+    } else {
+      console.log("Opening popup");
+      setShowPopup(true);
+    }
+  };
+
+  const handlePopupClose = () => {
+    setShowPopup(false);
+  };
+
   return (
     <section
       id="hero"
@@ -37,18 +57,16 @@ export default function Hero() {
       </div>
 
       {/* WhatsApp floating button */}
-      <Link
-        href="https://wa.me/5511999999999"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+      <button
+        onClick={handleFloatingButtonClick}
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
         aria-label="Contato via WhatsApp"
       >
         <WhatsAppIcon className="h-7 w-7" />
-      </Link>
+      </button>
 
       {/* WhatsApp Popup */}
-      <WhatsAppPopup />
+      <WhatsAppPopup showPopup={showPopup} onClose={handlePopupClose} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -76,28 +94,24 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href="https://wa.me/5511999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] hover:from-[#b8794c] hover:to-[#d4a269] text-[#10172a] px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl overflow-hidden group"
+              <button
+                onClick={() => startWhatsappConversation()}
+                className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] hover:from-[#b8794c] hover:to-[#d4a269] text-[#10172a] px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl overflow-hidden group cursor-pointer"
               >
-                {/* Gradiente sutil overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/5 to-white/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <WhatsAppIcon className="h-6 w-6 relative z-10" />
                 <span className="relative z-10">INICIAR ATENDIMENTO</span>
-              </Link>
+              </button>
 
               <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group">
-                <Link
-                  href="tel:062995292129"
-                  className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-6 py-3 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 w-full"
+                <button
+                  onClick={() => forcarDiscador()}
+                  className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-6 py-3 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 w-full cursor-pointer"
                 >
                   <Phone className="h-5 w-5 text-[#cc8c5d] group-hover:text-[#10172a] transition-colors duration-300" />
                   <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent group-hover:text-[#10172a]">
                     LIGAR AGORA
                   </span>
-                </Link>
+                </button>
               </div>
             </div>
 

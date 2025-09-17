@@ -1,7 +1,10 @@
+"use client";
+
 import { ArrowRight, Scale, CheckCircle, Zap, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import { startWhatsappConversation } from "@/utils/whatsapp";
 
 export default function Sobre() {
   return (
@@ -259,17 +262,13 @@ export default function Sobre() {
             {/* Botão CTA */}
             <div className="pt-6 flex flex-col sm:flex-row gap-3">
               {/* Botão WhatsApp CTA */}
-              <Link
-                href="https://wa.me/5562995292129"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] hover:from-[#b8794c] hover:to-[#d4a269] text-[#10172a] px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl overflow-hidden group"
+              <button
+                onClick={() => startWhatsappConversation()}
+                className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] hover:from-[#b8794c] hover:to-[#d4a269] text-[#10172a] px-6 py-3 rounded-lg font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl overflow-hidden group cursor-pointer"
               >
-                {/* Gradiente sutil overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/5 to-white/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <WhatsAppIcon className="h-6 w-6 relative z-10" />
                 <span className="relative z-10">CONSULTAR ADVOGADA</span>
-              </Link>
+              </button>
 
               {/* Botão Saiba Mais */}
               <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group">
