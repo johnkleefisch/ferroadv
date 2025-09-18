@@ -1,6 +1,6 @@
 /**
  * Utilitário centralizado para gerenciar ligações telefônicas
- * Facilita manutençãoexport default {
+ * Facilita manutençãoconst telefoneUtils = {
   iniciarLigacao,
   forcarDiscador,
   copiarNumeroTelefone,
@@ -8,7 +8,9 @@
   getNumeroCompleto,
   dispositivoSuportaLigacoes,
   acionarTelefone
-};nização dos números de telefone no site
+};
+
+export default telefoneUtils;nização dos números de telefone no site
  */
 
 // Configuração centralizada dos números de telefone

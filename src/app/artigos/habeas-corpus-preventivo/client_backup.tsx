@@ -600,6 +600,7 @@ export default function HabeasCorpusPreventivo() {
         </motion.div>
       </div>
     </section>
+    </div>
 
     {/* Card CTA - Seção da Advogada */}
     <section className="pt-0">

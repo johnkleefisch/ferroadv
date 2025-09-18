@@ -63,6 +63,7 @@ export default function Resultados() {
       }}
     >
       <div className="container-default">
+        </div>
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 font-sans">
             Resultados que{" "}
