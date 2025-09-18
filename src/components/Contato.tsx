@@ -11,19 +11,20 @@ import {
 } from "lucide-react";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
 import { startWhatsappConversation } from "@/utils/whatsapp";
+import { acionarTelefone } from "@/utils/telefone";
 
 export default function Contato() {
   const contatos = [
     {
       icon: Phone,
       titulo: "Telefone",
-      info: "(11) 99999-9999",
-      link: "tel:+5511999999999",
+      info: "(062) 99529-2129",
+      link: "telefone-function", // Marcador para usar a função
     },
     {
       icon: WhatsAppIcon,
       titulo: "WhatsApp",
-      info: "(11) 99999-9999",
+      info: "(062) 99529-2129",
       link: "whatsapp-function", // Marcador para usar a função
     },
     {
@@ -70,7 +71,7 @@ export default function Contato() {
   return (
     <section
       id="contato"
-      className="py-20 font-sans"
+      className="py-12 font-sans"
       style={{
         background:
           "linear-gradient(135deg, #10172a 0%, #334154 50%, #10172a 100%)",
@@ -94,7 +95,7 @@ export default function Contato() {
           {/* Informações de Contato */}
           <div className="space-y-8 animate-fade-in-up animate-delay-200 flex flex-col">
             <div
-              className="relative overflow-hidden rounded-2xl transition-all duration-300 group p-8 flex-1"
+              className="relative overflow-hidden rounded-2xl transition-all duration-300 p-8 flex-1"
               style={{
                 backgroundColor: "#242b38",
                 background: `
@@ -133,17 +134,18 @@ export default function Contato() {
                 {contatos.map((contato, index) => {
                   const IconComponent = contato.icon;
                   const isWhatsApp = contato.link === "whatsapp-function";
+                  const isTelefone = contato.link === "telefone-function";
 
                   if (isWhatsApp) {
                     return (
                       <button
                         key={index}
                         onClick={() => startWhatsappConversation()}
-                        className="block group/item w-full text-left cursor-pointer"
+                        className="block w-full text-left cursor-pointer"
                       >
-                        <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group-hover/item:-translate-y-1">
+                        <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
                           <div
-                            className="p-3 rounded-xl group-hover/item:scale-110 transition-all duration-300"
+                            className="p-3 rounded-xl hover:scale-110 transition-all duration-300"
                             style={{
                               background:
                                 "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
@@ -162,7 +164,41 @@ export default function Contato() {
                               {contato.info}
                             </p>
                           </div>
-                          <Navigation className="h-5 w-5 text-[#cc8c5d] opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                          <Navigation className="h-5 w-5 text-[#cc8c5d] opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                      </button>
+                    );
+                  }
+
+                  if (isTelefone) {
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => acionarTelefone()}
+                        className="block w-full text-left cursor-pointer"
+                      >
+                        <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+                          <div
+                            className="p-3 rounded-xl hover:scale-110 transition-all duration-300"
+                            style={{
+                              background:
+                                "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
+                            }}
+                          >
+                            <IconComponent
+                              className="h-6 w-6 text-slate-900"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-bold text-white mb-1">
+                              {contato.titulo}
+                            </h4>
+                            <p className="text-[#cc8c5d] font-semibold">
+                              {contato.info}
+                            </p>
+                          </div>
+                          <Navigation className="h-5 w-5 text-[#cc8c5d] opacity-0 hover:opacity-100 transition-opacity duration-300" />
                         </div>
                       </button>
                     );
@@ -172,7 +208,7 @@ export default function Contato() {
                     <a
                       key={index}
                       href={contato.link}
-                      className="block group/item"
+                      className="block"
                       target={
                         contato.titulo === "WhatsApp" ? "_blank" : undefined
                       }
@@ -182,9 +218,9 @@ export default function Contato() {
                           : undefined
                       }
                     >
-                      <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group-hover/item:-translate-y-1">
+                      <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
                         <div
-                          className="p-3 rounded-xl group-hover/item:scale-110 transition-all duration-300"
+                          className="p-3 rounded-xl hover:scale-110 transition-all duration-300"
                           style={{
                             background:
                               "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
@@ -267,15 +303,15 @@ export default function Contato() {
                   <span className="relative z-10">INICIAR ATENDIMENTO</span>
                 </button>
                 <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group flex-1">
-                  <a
-                    href="tel:+5562995292129"
+                  <button
+                    onClick={() => acionarTelefone()}
                     className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-6 py-3 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 w-full"
                   >
                     <Phone className="h-5 w-5 text-[#cc8c5d] group-hover:text-[#10172a] transition-colors duration-300" />
                     <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent group-hover:text-[#10172a]">
                       LIGAR AGORA
                     </span>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -284,7 +320,7 @@ export default function Contato() {
           {/* Mapa e Endereço */}
           <div className="animate-fade-in-up animate-delay-300 flex flex-col">
             <div
-              className="relative overflow-hidden rounded-2xl transition-all duration-300 group flex-1"
+              className="relative overflow-hidden rounded-2xl transition-all duration-300 flex-1"
               style={{
                 backgroundColor: "#242b38",
                 background: `

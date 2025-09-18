@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Scale, Phone, ChevronDown } from "lucide-react";
+import { acionarTelefone } from "@/utils/telefone";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -117,15 +118,15 @@ export default function Header() {
           <div className="hidden lg:block">
             {/* Número da Advogada - Botão Estilo Hero */}
             <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group">
-              <Link
-                href="tel:+5562995292129"
+              <button
+                onClick={() => acionarTelefone()}
                 className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-4 py-2 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 text-sm"
               >
                 <Phone className="h-4 w-4 text-[#cc8c5d] group-hover:text-[#10172a] transition-colors duration-300" />
                 <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent group-hover:text-[#10172a]">
                   (62) 99529-2129
                 </span>
-              </Link>
+              </button>
             </div>
           </div>
 

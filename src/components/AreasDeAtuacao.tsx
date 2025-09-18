@@ -88,7 +88,7 @@ export default function AreasDeAtuacao() {
 
   return (
     <section
-      className="py-20"
+      className="py-12"
       style={{
         background:
           "linear-gradient(135deg, #10172a 0%, #334154 50%, #10172a 100%)",

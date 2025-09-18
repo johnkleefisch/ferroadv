@@ -17,10 +17,10 @@ export default function Sobre() {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-7 gap-4 items-stretch">
           {/* Lado Esquerdo - Foto Principal */}
-          <div className="relative min-h-[600px] lg:min-h-full">
-            <div className="relative overflow-hidden rounded-3xl h-full">
+          <div className="relative min-h-[450px] lg:min-h-full lg:col-span-3">
+            <div className="relative w-full h-full max-w-sm rounded-3xl overflow-hidden">
               <Image
                 src="/images/diulliany-about.webp"
                 alt="Dra. Diulliany Ferro - Advogada Criminalista"
@@ -42,7 +42,7 @@ export default function Sobre() {
                 }}
               />
 
-              {/* Badge discreto, igual ao do Hero, com nome, título e OAB */}
+              {/* Badge discreto, do lado esquerdo inferior da foto */}
               <div className="absolute bottom-2 left-2 bg-slate-800/80 backdrop-blur-sm rounded-md px-2 py-1 border border-slate-600/50 z-20">
                 <h3 className="font-semibold text-white text-xs">
                   Dra. Diulliany Ferro
@@ -50,17 +50,17 @@ export default function Sobre() {
                 <p className="text-accent font-medium text-xs">OAB/GO 66.387</p>
               </div>
 
-              {/* Pontos de luz dourados nos cantos, igual ao Hero */}
+              {/* Pontos de luz dourados nos cantos, ajustados para foto menor */}
               <div
-                className="absolute -top-3 -right-3 w-20 h-20 rounded-full blur-xl"
+                className="absolute top-2 right-2 w-16 h-16 rounded-full blur-xl"
                 style={{ backgroundColor: "rgba(204, 140, 93, 0.2)" }}
               ></div>
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-slate-600/20 rounded-full blur-xl"></div>
+              <div className="absolute bottom-2 right-2 w-20 h-20 bg-slate-600/20 rounded-full blur-xl"></div>
             </div>
           </div>
 
           {/* Lado Direito - Conteúdo */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:col-span-4 lg:-ml-24">
             {/* Badge/Tag */}
             <div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border"
@@ -147,31 +147,25 @@ export default function Sobre() {
             </div>
 
             {/* Estatísticas em Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-6">
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-4 text-center border border-slate-700">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="flex items-center gap-2">
-                    <Scale className="h-6 w-6 text-[#cc8c5d]/70" />
-                    <div className="text-2xl md:text-3xl font-bold text-[#cc8c5d]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center gap-1">
+                    <Scale className="h-5 w-5 text-[#cc8c5d]/70" />
+                    <div className="text-xl md:text-2xl font-bold text-[#cc8c5d]">
                       500+
                     </div>
                   </div>
                   <div className="text-xs text-gray-400 uppercase tracking-wide">
-                    <span className="md:hidden">Casos de Sucesso</span>
-                    <span className="hidden md:inline">
-                      Casos de
-                      <br />
-                      Sucesso
-                    </span>
+                    Casos de Sucesso
                   </div>
                 </div>
               </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-4 text-center border border-slate-700">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-6 w-6 text-[#cc8c5d]/70" />
-                    <div className="text-2xl md:text-3xl font-bold text-[#cc8c5d]">
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center gap-1">
+                    <CheckCircle className="h-5 w-5 text-[#cc8c5d]/70" />
+                    <div className="text-xl md:text-2xl font-bold text-[#cc8c5d]">
                       99%
                     </div>
                   </div>
@@ -180,80 +174,16 @@ export default function Sobre() {
                   </div>
                 </div>
               </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-4 text-center border border-slate-700">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="flex items-center gap-2">
-                    <Zap className="h-6 w-6 text-[#cc8c5d]/70" />
-                    <div className="text-2xl md:text-3xl font-bold text-[#cc8c5d]">
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center gap-1">
+                    <Zap className="h-5 w-5 text-[#cc8c5d]/70" />
+                    <div className="text-xl md:text-2xl font-bold text-[#cc8c5d]">
                       24h
                     </div>
                   </div>
                   <div className="text-xs text-gray-400 uppercase tracking-wide">
                     Atendimento Imediato
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Citação da Advogada */}
-            <div className="relative">
-              {/* Card principal com efeito glassmorphism */}
-              <div
-                className="relative rounded-2xl p-6 overflow-hidden"
-                style={{
-                  backgroundColor: "#242b38",
-                  background: `
-                    linear-gradient(135deg, 
-                      rgba(204, 140, 93, 0.03) 0%, 
-                      rgba(204, 140, 93, 0.01) 25%, 
-                      transparent 50%
-                    ),
-                    #242b38
-                  `,
-                  border: "1px solid rgba(204, 140, 93, 0.08)",
-                  boxShadow: `
-                    0 4px 20px rgba(0, 0, 0, 0.25),
-                    inset 0 1px 0 rgba(204, 140, 93, 0.05)
-                  `,
-                }}
-              >
-                {/* Efeitos visuais de fundo */}
-                <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-[#cc8c5d]/20 to-[#e6b07a]/10 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-3 -left-3 w-20 h-20 bg-slate-600/10 rounded-full blur-2xl"></div>
-
-                {/* Aspas decorativas */}
-                <div className="absolute top-2 left-4 text-4xl text-[#cc8c5d]/30 font-serif leading-none">
-                  &ldquo;
-                </div>
-
-                {/* Conteúdo */}
-                <div className="relative z-10 pt-4">
-                  <blockquote className="text-lg text-white/95 leading-relaxed mb-4 font-light">
-                    Cada cliente que atendo recebe não apenas minha{" "}
-                    <span className="text-[#cc8c5d] font-medium">
-                      expertise técnica
-                    </span>
-                    , mas também meu{" "}
-                    <span className="text-[#cc8c5d] font-medium">
-                      comprometimento pessoal
-                    </span>
-                    . Acredito que a advocacia criminal vai além das leis - é
-                    sobre defender a{" "}
-                    <span className="text-[#cc8c5d] font-medium">
-                      dignidade humana
-                    </span>
-                    .
-                  </blockquote>
-
-                  <div className="flex items-center justify-end gap-3">
-                    {/* Autor */}
-                    <cite className="text-base font-semibold text-[#cc8c5d] not-italic">
-                      Dra. Diulliany Ferro
-                    </cite>
-
-                    {/* Linha decorativa */}
-                    <div className="w-8 h-px bg-gradient-to-l from-[#cc8c5d] to-transparent"></div>
                   </div>
                 </div>
               </div>
@@ -273,7 +203,7 @@ export default function Sobre() {
               {/* Botão Saiba Mais */}
               <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group">
                 <Link
-                  href="#historia"
+                  href="/sobre"
                   className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-6 py-3 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 w-full"
                 >
                   <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent group-hover:text-[#10172a]">

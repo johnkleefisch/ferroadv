@@ -16,16 +16,16 @@ export default telefoneUtils;nização dos números de telefone no site
 // Configuração centralizada dos números de telefone
 const TELEFONE_CONFIG = {
   // Número principal do escritório
-  principal: "62995292129",
+  principal: "062995292129",
 
   // Código de área padrão (Goiânia)
-  codigoArea: "62",
+  codigoArea: "062",
 
   // Número formatado para exibição
-  numeroFormatado: "(62) 99529-2129",
+  numeroFormatado: "(062) 99529-2129",
 
   // Número completo com código do país
-  numeroCompleto: "+5562995292129",
+  numeroCompleto: "+55062995292129",
 };
 
 /**

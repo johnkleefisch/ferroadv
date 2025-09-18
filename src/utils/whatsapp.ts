@@ -5,7 +5,7 @@
 
 // Configurações do WhatsApp
 const WHATSAPP_CONFIG = {
-  numero: "5562995292129", // Número do WhatsApp (com código do país)
+  numero: "55062995292129", // Número do WhatsApp (com código do país)
   baseUrl: "https://wa.me/",
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Scale, Phone, Mail, MapPin } from "lucide-react";
+import { Scale, Phone, Mail, MapPin, Clover } from "lucide-react";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
 import { startWhatsappConversation } from "@/utils/whatsapp";
 import { acionarTelefone } from "@/utils/telefone";
@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="bg-slate-900 border-t border-slate-700/30">
       <div className="container mx-auto px-6 py-12">
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Logo e Descrição */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center group mb-6">
@@ -74,7 +74,29 @@ export default function Footer() {
                 { href: "#areas-de-atuacao", label: "Áreas de Atuação" },
                 { href: "#resultados", label: "Resultados" },
                 { href: "#depoimentos", label: "Depoimentos" },
-                { href: "#contato", label: "Contato" },
+                { href: "#faq", label: "FAQ" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block text-slate-400 hover:text-[#cc8c5d] transition-colors duration-300 py-1"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Serviços */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Serviços</h4>
+            <nav className="space-y-2">
+              {[
+                { href: "/areas-de-atuacao", label: "Furto e Roubo" },
+                { href: "/areas-de-atuacao", label: "Tráfico de Drogas" },
+                { href: "/areas-de-atuacao", label: "Homicídio" },
+                { href: "/areas-de-atuacao", label: "Violência Doméstica" },
+                { href: "/contato", label: "Atendimentos de Urgência" },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -177,13 +199,44 @@ export default function Footer() {
         <div className="border-t border-slate-700/30 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
             <div className="mb-2 md:mb-0">
-              © {new Date().getFullYear()}{" "}
-              <span className="text-[#e6b07a] font-semibold">
-                DIULLIANY FERRO
-              </span>{" "}
-              - Todos os direitos reservados
+              © {new Date().getFullYear()}, Diulliany Ferro Advocacia - Todos os
+              Direitos Reservados
             </div>
-            <div>OAB/GO: 123.456</div>
+            <div className="flex flex-wrap justify-center md:justify-end gap-2 md:gap-4 items-center">
+              <Link
+                href="/politica-privacidade"
+                className="hover:text-[#cc8c5d] transition-colors duration-300"
+              >
+                Política de Privacidade
+              </Link>
+              <Link
+                href="/termos-de-uso"
+                className="hover:text-[#cc8c5d] transition-colors duration-300"
+              >
+                Termos de Uso
+              </Link>
+              <Link
+                href="/cookies"
+                className="hover:text-[#cc8c5d] transition-colors duration-300"
+              >
+                Cookies
+              </Link>
+              <span className="text-xs text-slate-500/70 flex items-center gap-1">
+                Desenvolvido por{" "}
+                <a
+                  href="https://kleelabs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold transition-colors duration-300 text-slate-500/80 hover:text-white flex items-center gap-px group"
+                >
+                  <Clover className="h-4 w-4 text-slate-500/60 group-hover:text-green-400" />
+                  <span>
+                    <span className="group-hover:text-green-400">Klee</span>
+                    <span className="group-hover:text-white">Labs</span>
+                  </span>
+                </a>
+              </span>
+            </div>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Plus, Minus, HelpCircle, ChevronUp, ChevronDown } from "lucide-react";
 import { startWhatsappConversation } from "@/utils/whatsapp";
+import { acionarTelefone } from "@/utils/telefone";
 
 export default function FAQ() {
   const [perguntaAberta, setPerguntaAberta] = useState<number | null>(0);
@@ -58,7 +59,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="py-20 font-sans"
+      className="py-12 font-sans"
       style={{
         background:
           "linear-gradient(135deg, #10172a 0%, #334154 50%, #10172a 100%)",
@@ -209,8 +210,8 @@ export default function FAQ() {
                   <span className="relative z-10">INICIAR ATENDIMENTO</span>
                 </button>
                 <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group">
-                  <a
-                    href="tel:+5562995292129"
+                  <button
+                    onClick={() => acionarTelefone()}
                     className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-6 py-3 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 w-full"
                   >
                     <svg
@@ -227,7 +228,7 @@ export default function FAQ() {
                     <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent group-hover:text-[#10172a]">
                       LIGAR AGORA
                     </span>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

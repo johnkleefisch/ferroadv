@@ -446,16 +446,66 @@ export default function SobrePage() {
 
             {/* Citação */}
             <div className="max-w-4xl mx-auto">
-              <div className="bg-gradient-to-r from-slate-800/60 to-slate-700/40 backdrop-blur-sm p-8 rounded-2xl border border-[#cc8c5d]/20">
-                <Quote className="h-12 w-12 text-[#cc8c5d] mx-auto mb-6" />
-                <blockquote className="text-2xl md:text-3xl text-white font-light italic leading-relaxed mb-6 text-center">
-                  &ldquo;A advocacia criminal é mais que uma profissão - é uma
-                  missão de defender direitos fundamentais e garantir que a
-                  justiça seja feita com dignidade e competência técnica.&rdquo;
-                </blockquote>
-                <cite className="text-lg bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent font-semibold text-center block">
-                  Dra. Diulliany Ferro, OAB/GO
-                </cite>
+              <div className="relative">
+                {/* Card principal com efeito glassmorphism */}
+                <div
+                  className="relative rounded-2xl p-6 overflow-hidden"
+                  style={{
+                    backgroundColor: "#242b38",
+                    background: `
+                      linear-gradient(135deg, 
+                        rgba(204, 140, 93, 0.03) 0%, 
+                        rgba(204, 140, 93, 0.01) 25%, 
+                        transparent 50%
+                      ),
+                      #242b38
+                    `,
+                    border: "1px solid rgba(204, 140, 93, 0.08)",
+                    boxShadow: `
+                      0 4px 20px rgba(0, 0, 0, 0.25),
+                      inset 0 1px 0 rgba(204, 140, 93, 0.05)
+                    `,
+                  }}
+                >
+                  {/* Efeitos visuais de fundo */}
+                  <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-[#cc8c5d]/20 to-[#e6b07a]/10 rounded-full blur-xl"></div>
+                  <div className="absolute -bottom-3 -left-3 w-20 h-20 bg-slate-600/10 rounded-full blur-2xl"></div>
+
+                  {/* Aspas decorativas */}
+                  <div className="absolute top-2 left-4 text-4xl text-[#cc8c5d]/30 font-serif leading-none">
+                    &ldquo;
+                  </div>
+
+                  {/* Conteúdo */}
+                  <div className="relative z-10 pt-4">
+                    <blockquote className="text-lg text-white/95 leading-relaxed mb-4 font-light">
+                      Cada cliente que atendo recebe não apenas minha{" "}
+                      <span className="text-[#cc8c5d] font-medium">
+                        expertise técnica
+                      </span>
+                      , mas também meu{" "}
+                      <span className="text-[#cc8c5d] font-medium">
+                        comprometimento pessoal
+                      </span>
+                      . Acredito que a advocacia criminal vai além das leis - é
+                      sobre defender a{" "}
+                      <span className="text-[#cc8c5d] font-medium">
+                        dignidade humana
+                      </span>
+                      .
+                    </blockquote>
+
+                    <div className="flex items-center justify-end gap-3">
+                      {/* Autor */}
+                      <cite className="text-base font-semibold text-[#cc8c5d] not-italic">
+                        Dra. Diulliany Ferro
+                      </cite>
+
+                      {/* Linha decorativa */}
+                      <div className="w-8 h-px bg-gradient-to-l from-[#cc8c5d] to-transparent"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

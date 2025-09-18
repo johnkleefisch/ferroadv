@@ -4,11 +4,12 @@ import {
   TrendingUp,
   Users,
   Unlock,
-  ArrowDown,
+  ArrowRight,
   AlertTriangle,
   Zap,
 } from "lucide-react";
 import { startWhatsappConversation } from "@/utils/whatsapp";
+import { acionarTelefone } from "@/utils/telefone";
 
 export default function Resultados() {
   const cards = [
@@ -37,7 +38,7 @@ export default function Resultados() {
       number: "80%",
       title: "Redução de Pena",
       desc: "Ou conversão para medidas alternativas mais brandas.",
-      icon: ArrowDown,
+      icon: Zap,
       delay: 400,
     },
     {
@@ -58,20 +59,24 @@ export default function Resultados() {
   return (
     <section
       id="resultados"
-      className="py-20 font-sans"
+      className="font-sans"
       style={{
         background:
           "linear-gradient(135deg, #10172a 0%, #334154 50%, #10172a 100%)",
       }}
     >
       <div className="container-default">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 font-sans">
             Resultados que{" "}
             <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
               Falam por Si
             </span>
           </h2>
+          <p className="text-lg font-light text-white max-w-4xl mx-auto leading-relaxed mb-16">
+            Nossa experiência e dedicação se refletem em resultados concretos
+            que transformam vidas e garantem justiça
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -189,8 +194,8 @@ export default function Resultados() {
                   <span className="relative z-10">INICIAR ATENDIMENTO</span>
                 </button>
                 <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group">
-                  <a
-                    href="tel:+5562995292129"
+                  <button
+                    onClick={() => acionarTelefone()}
                     className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-6 py-3 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 w-full"
                   >
                     <svg
@@ -207,14 +212,14 @@ export default function Resultados() {
                     <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent group-hover:text-[#10172a]">
                       LIGAR AGORA
                     </span>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="text-center mt-16 animate-fade-in-up animate-delay-800">
+        <div className="text-center animate-fade-in-up animate-delay-800">
           {/* Informação de sigilo removida conforme solicitado */}
         </div>
       </div>
