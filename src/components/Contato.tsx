@@ -376,38 +376,40 @@ export default function Contato() {
 
                 {/* Endereço */}
                 <div className="mb-6">
-                  <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5">
-                    <div
-                      className="p-3 rounded-xl"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
-                      }}
-                    >
-                      <MapPin
-                        className="h-6 w-6 text-slate-900"
-                        aria-hidden="true"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-white mb-2">
-                        Endereço Completo
-                      </h4>
-                      <a
-                        href="https://www.google.com/maps/place/Diulliany+Ferro+Advogada+Criminal/@-16.6835002,-49.3063929,18.75z/data=!4m6!3m5!1s0x935ef3a425442c83:0x77409912e6f10f58!8m2!3d-16.6831813!4d-49.3047424!16s%2Fg%2F11xm1c_tvj?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white/90 leading-relaxed hover:text-[#cc8c5d] transition-colors duration-300 cursor-pointer block"
+                  <a
+                    href="https://www.google.com/maps/place/Diulliany+Ferro+Advogada+Criminal/@-16.6835002,-49.3063929,18.75z/data=!4m6!3m5!1s0x935ef3a425442c83:0x77409912e6f10f58!8m2!3d-16.6831813!4d-49.3047424!16s%2Fg%2F11xm1c_tvj?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left cursor-pointer"
+                  >
+                    <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:border-[#cc8c5d]/20 border border-transparent">
+                      <div
+                        className="p-3 rounded-xl transition-all duration-300"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
+                        }}
                       >
-                        Av. Eng. Atílio Corrêa Lima, 742
-                        <br />
-                        Cidade Jardim, Goiânia - GO, 74425-901
-                      </a>
-                      <p className="text-white/70 text-sm mt-2">
-                        Atendimento presencial com agendamento
-                      </p>
+                        <MapPin
+                          className="h-6 w-6 text-slate-900"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-white mb-1">
+                          Endereço Completo
+                        </h4>
+                        <p className="text-[#cc8c5d] font-semibold">
+                          Av. Eng. Atílio Corrêa Lima, 742
+                          <br />
+                          Cidade Jardim, Goiânia - GO, 74425-901
+                        </p>
+                        <p className="text-white/70 text-sm mt-2">
+                          Atendimento presencial com agendamento
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
 
                 {/* Tipos de Atendimento */}
