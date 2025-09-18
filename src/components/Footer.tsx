@@ -116,12 +116,17 @@ export default function Footer() {
               <div className="flex items-start">
                 <MapPin className="h-4 w-4 text-[#cc8c5d] mr-3 mt-0.5" />
                 <div>
-                  <span className="text-slate-300 text-sm block">
-                    Av. Eng. Atílio Corrêa Lima, 742
-                  </span>
-                  <span className="text-slate-300 text-sm">
-                    Cidade Jardim, Goiânia - GO
-                  </span>
+                  <a
+                    href="https://www.google.com/maps/place/Diulliany+Ferro+Advogada+Criminal/@-16.6835002,-49.3063929,18.75z/data=!4m6!3m5!1s0x935ef3a425442c83:0x77409912e6f10f58!8m2!3d-16.6831813!4d-49.3047424!16s%2Fg%2F11xm1c_tvj?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-300 text-sm hover:text-[#cc8c5d] transition-colors duration-300 cursor-pointer"
+                  >
+                    <span className="block">
+                      Av. Eng. Atílio Corrêa Lima, 742
+                    </span>
+                    <span className="block">Cidade Jardim, Goiânia - GO</span>
+                  </a>
                 </div>
               </div>
 
@@ -129,7 +134,7 @@ export default function Footer() {
                 <Phone className="h-4 w-4 text-[#cc8c5d] mr-3" />
                 <button
                   onClick={() => acionarTelefone()}
-                  className="text-slate-300 hover:text-white transition-colors duration-300 text-sm cursor-pointer"
+                  className="text-slate-300 hover:text-[#cc8c5d] transition-colors duration-300 text-sm cursor-pointer"
                 >
                   (62) 99529-2129
                 </button>
@@ -139,7 +144,7 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-[#cc8c5d] mr-3" />
                 <a
                   href="mailto:contato.ferroadv@gmail.com"
-                  className="text-slate-300 hover:text-white transition-colors duration-300 text-sm"
+                  className="text-slate-300 hover:text-[#cc8c5d] transition-colors duration-300 text-sm"
                 >
                   contato.ferroadv@gmail.com
                 </a>
@@ -182,7 +187,7 @@ export default function Footer() {
                   <Mail className="h-5 w-5 text-slate-300 group-hover:text-white" />
                 </a>
                 <a
-                  href="https://maps.google.com/?q=Av.+Eng.+Atílio+Corrêa+Lima,+742,+Cidade+Jardim,+Goiânia+-+GO"
+                  href="https://www.google.com/maps/place/Diulliany+Ferro+Advogada+Criminal/@-16.6835002,-49.3063929,18.75z/data=!4m6!3m5!1s0x935ef3a425442c83:0x77409912e6f10f58!8m2!3d-16.6831813!4d-49.3047424!16s%2Fg%2F11xm1c_tvj?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-slate-700/50 hover:bg-[#cc8c5d] rounded-full flex items-center justify-center transition-all duration-300 group"

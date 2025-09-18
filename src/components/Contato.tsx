@@ -16,16 +16,16 @@ import { acionarTelefone } from "@/utils/telefone";
 export default function Contato() {
   const contatos = [
     {
-      icon: Phone,
-      titulo: "Telefone",
-      info: "(062) 99529-2129",
-      link: "telefone-function", // Marcador para usar a função
-    },
-    {
       icon: WhatsAppIcon,
       titulo: "WhatsApp",
-      info: "(062) 99529-2129",
+      info: "(62) 99529-2129",
       link: "whatsapp-function", // Marcador para usar a função
+    },
+    {
+      icon: Phone,
+      titulo: "Telefone",
+      info: "(62) 99529-2129",
+      link: "telefone-function", // Marcador para usar a função
     },
     {
       icon: Mail,
@@ -36,8 +36,8 @@ export default function Contato() {
   ];
 
   const enderecoCompleto =
-    "Rua dos Advogados, 123 - Sala 456, Setor Bueno, Goiânia - GO, 74210-000";
-  const coordenadas = "-16.6869,-49.2648"; // Coordenadas exemplo para Setor Bueno, Goiânia
+    "Av. Eng. Atílio Corrêa Lima, 742, Cidade Jardim, Goiânia - GO, 74425-901";
+  const coordenadas = "-16.6831813,-49.3047424"; // Coordenadas exatas do escritório Diulliany Ferro
 
   // Carrega o script do WhatsApp
   useEffect(() => {
@@ -143,9 +143,9 @@ export default function Contato() {
                         onClick={() => startWhatsappConversation()}
                         className="block w-full text-left cursor-pointer"
                       >
-                        <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+                        <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:border-[#cc8c5d]/20 border border-transparent">
                           <div
-                            className="p-3 rounded-xl hover:scale-110 transition-all duration-300"
+                            className="p-3 rounded-xl transition-all duration-300"
                             style={{
                               background:
                                 "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
@@ -164,7 +164,18 @@ export default function Contato() {
                               {contato.info}
                             </p>
                           </div>
-                          <Navigation className="h-5 w-5 text-[#cc8c5d] opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                          {(contato.titulo === "Telefone" ||
+                            contato.titulo === "WhatsApp") && (
+                            <span
+                              className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold text-slate-900"
+                              style={{
+                                background:
+                                  "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
+                              }}
+                            >
+                              24h
+                            </span>
+                          )}
                         </div>
                       </button>
                     );
@@ -177,9 +188,9 @@ export default function Contato() {
                         onClick={() => acionarTelefone()}
                         className="block w-full text-left cursor-pointer"
                       >
-                        <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+                        <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:border-[#cc8c5d]/20 border border-transparent">
                           <div
-                            className="p-3 rounded-xl hover:scale-110 transition-all duration-300"
+                            className="p-3 rounded-xl transition-all duration-300"
                             style={{
                               background:
                                 "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
@@ -198,7 +209,18 @@ export default function Contato() {
                               {contato.info}
                             </p>
                           </div>
-                          <Navigation className="h-5 w-5 text-[#cc8c5d] opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                          {(contato.titulo === "Telefone" ||
+                            contato.titulo === "WhatsApp") && (
+                            <span
+                              className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold text-slate-900"
+                              style={{
+                                background:
+                                  "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
+                              }}
+                            >
+                              24h
+                            </span>
+                          )}
                         </div>
                       </button>
                     );
@@ -218,9 +240,9 @@ export default function Contato() {
                           : undefined
                       }
                     >
-                      <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+                      <div className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:border-[#cc8c5d]/20 border border-transparent">
                         <div
-                          className="p-3 rounded-xl hover:scale-110 transition-all duration-300"
+                          className="p-3 rounded-xl transition-all duration-300"
                           style={{
                             background:
                               "linear-gradient(135deg, #cc8c5d 0%, #e6b07a 100%)",
@@ -371,9 +393,16 @@ export default function Contato() {
                       <h4 className="font-bold text-white mb-2">
                         Endereço Completo
                       </h4>
-                      <p className="text-white/90 leading-relaxed">
-                        {enderecoCompleto}
-                      </p>
+                      <a
+                        href="https://www.google.com/maps/place/Diulliany+Ferro+Advogada+Criminal/@-16.6835002,-49.3063929,18.75z/data=!4m6!3m5!1s0x935ef3a425442c83:0x77409912e6f10f58!8m2!3d-16.6831813!4d-49.3047424!16s%2Fg%2F11xm1c_tvj?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/90 leading-relaxed hover:text-[#cc8c5d] transition-colors duration-300 cursor-pointer block"
+                      >
+                        Av. Eng. Atílio Corrêa Lima, 742
+                        <br />
+                        Cidade Jardim, Goiânia - GO, 74425-901
+                      </a>
                       <p className="text-white/70 text-sm mt-2">
                         Atendimento presencial com agendamento
                       </p>
@@ -415,7 +444,7 @@ export default function Contato() {
                 <div className="mb-6 flex-1">
                   <div className="rounded-xl overflow-hidden border border-white/10 h-full min-h-[280px]">
                     <iframe
-                      src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.1153932883!2d-46.6864!3d-23.5978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM1JzUyLjEiUyA0NsKwNDEnMTEuMCJX!5e0!3m2!1spt!2sbr!4v1640995200000!5m2!1spt!2sbr`}
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1136.2480799231544!2d-49.30639285158374!3d-16.68350015502697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef3a425442c83%3A0x77409912e6f10f58!2sDiulliany%20Ferro%20Advogada%20Criminal!5e0!3m2!1spt-BR!2sde!4v1758197055290!5m2!1spt-BR!2sde&iwloc=near"
                       width="100%"
                       height="100%"
                       style={{ border: 0, minHeight: "280px" }}
@@ -431,7 +460,7 @@ export default function Contato() {
                 {/* Botão para Abrir no Google Maps */}
                 <div className="relative bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] p-[2px] rounded-lg transition-all duration-300 hover:shadow-lg group w-full">
                   <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${coordenadas}`}
+                    href="https://www.google.com/maps/place/Diulliany+Ferro+Advogada+Criminal/@-16.6835002,-49.3063929,18.75z/data=!4m6!3m5!1s0x935ef3a425442c83:0x77409912e6f10f58!8m2!3d-16.6831813!4d-49.3047424!16s%2Fg%2F11xm1c_tvj?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-slate-900 hover:bg-gradient-to-r hover:from-[#cc8c5d] hover:to-[#e6b07a] px-6 py-3 rounded-md font-bold uppercase tracking-wide transition-all duration-300 inline-flex items-center justify-center space-x-2 w-full"
