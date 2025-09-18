@@ -518,9 +518,10 @@ export default function HabeasCorpusPreventivo() {
                       Supremo Tribunal Federal
                     </h3>
                     <p className="text-[#94a3b8] italic mb-3">
-                      &ldquo;O habeas corpus preventivo constitui remédio idôneo para
-                      obstar ameaça ao direito de locomoção, desde que a coação
-                      seja iminente e tenha por objeto a liberdade de ir e vir.&rdquo;
+                      &ldquo;O habeas corpus preventivo constitui remédio idôneo
+                      para obstar ameaça ao direito de locomoção, desde que a
+                      coação seja iminente e tenha por objeto a liberdade de ir
+                      e vir.&rdquo;
                     </p>
                     <p className="text-[#94a3b8] text-sm">
                       HC 126.292/SP - Rel. Min. Teori Zavascki
@@ -532,9 +533,9 @@ export default function HabeasCorpusPreventivo() {
                       Superior Tribunal de Justiça
                     </h3>
                     <p className="text-[#94a3b8] italic mb-3">
-                      "                      &ldquo;É cabível o habeas corpus preventivo quando demonstrada a
-                      ameaça concreta de constrangimento ilegal, ainda que a
-                      prisão não tenha se consumado.&rdquo;"
+                      &ldquo;É cabível o habeas corpus preventivo quando
+                      demonstrada a ameaça concreta de constrangimento ilegal,
+                      ainda que a prisão não tenha se consumado.&rdquo;
                     </p>
                     <p className="text-[#94a3b8] text-sm">
                       HC 315.847/RJ - Rel. Min. Ribeiro Dantas

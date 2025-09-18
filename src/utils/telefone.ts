@@ -99,11 +99,14 @@ export async function acionarTelefone(): Promise<void> {
   }
 }
 
-export default {
+const telefoneUtils = {
   iniciarLigacao,
+  forcarDiscador,
   copiarNumeroTelefone,
   getNumeroFormatado,
   getNumeroCompleto,
   dispositivoSuportaLigacoes,
   acionarTelefone,
 };
+
+export default telefoneUtils;

@@ -62,100 +62,101 @@ export default function Resultados() {
           "linear-gradient(135deg, #10172a 0%, #334154 50%, #10172a 100%)",
       }}
     >
-      <div className="container-default">
-        </div>
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 font-sans">
-            Resultados que{" "}
-            <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
-              Falam por Si
-            </span>
-          </h2>
-        </div>
+      <div className="container-default"></div>
+      <div className="text-center mb-16 animate-fade-in-up">
+        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 font-sans">
+          Resultados que{" "}
+          <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
+            Falam por Si
+          </span>
+        </h2>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cards.map((item) => {
-            const Icon = item.icon;
-            return (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {cards.map((item) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={item.title}
+              className={
+                "relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group text-center animate-fade-in-up animate-delay-" +
+                item.delay +
+                " font-sans"
+              }
+              style={{
+                backgroundColor: "#242b38",
+                background:
+                  "linear-gradient(135deg, rgba(204, 140, 93, 0.03) 0%, rgba(204, 140, 93, 0.01) 25%, transparent 50%), #242b38",
+                border: "1px solid rgba(204, 140, 93, 0.08)",
+                boxShadow:
+                  "0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(204, 140, 93, 0.05)",
+              }}
+            >
+              {/* Efeito de Brilho Superior Esquerdo */}
               <div
-                key={item.title}
-                className={
-                  "relative overflow-hidden rounded-2xl p-8 transition-all duration-300 group text-center animate-fade-in-up animate-delay-" +
-                  item.delay +
-                  " font-sans"
-                }
+                className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
                 style={{
-                  backgroundColor: "#242b38",
                   background:
-                    "linear-gradient(135deg, rgba(204, 140, 93, 0.03) 0%, rgba(204, 140, 93, 0.01) 25%, transparent 50%), #242b38",
-                  border: "1px solid rgba(204, 140, 93, 0.08)",
-                  boxShadow:
-                    "0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(204, 140, 93, 0.05)",
+                    "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
                 }}
-              >
-                {/* Efeito de Brilho Superior Esquerdo */}
-                <div
-                  className="absolute top-0 left-0 w-24 h-24 pointer-events-none opacity-15"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 0% 0%, rgba(204, 140, 93, 0.15) 0%, transparent 70%)",
-                  }}
-                />
-                {/* Ícone lúdico centralizado */}
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5 bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] transition-all duration-300">
-                  <Icon className="h-7 w-7 text-slate-900" strokeWidth={1.5} />
-                </div>
-                <div className="text-5xl font-bold text-accent mb-2 font-sans">
-                  <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
-                    {item.number}
-                  </span>
-                </div>
-                <div className="text-lg font-semibold text-white mb-2 font-sans">
-                  {item.title}
-                </div>
-                <div className="text-secondary text-base mb-2 font-sans">
-                  {item.desc}
-                </div>
-                {/* Linha separadora dourada */}
-                <div
-                  className="w-full h-px mt-6"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
-                    opacity: 0.3,
-                  }}
-                />
+              />
+              {/* Ícone lúdico centralizado */}
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5 bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] transition-all duration-300">
+                <Icon className="h-7 w-7 text-slate-900" strokeWidth={1.5} />
               </div>
-            );
-          })}
-        </div>
-
-        {/* Card CTA discreto */}
-        <div className="max-w-2xl mx-auto mt-12">
-          <div className="relative rounded-xl overflow-hidden border border-[#cc8c5d]/20 shadow-lg"
-            style={{
-              background: "linear-gradient(135deg, #242b38 60%, #cc8c5d1a 100%)"
-            }}>
-            {/* Brilho decorativo reduzido */}
-            <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-[#cc8c5d]/20 to-transparent rounded-full blur-xl pointer-events-none"></div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 min-h-[200px]">
-              {/* Coluna 1 - Foto da Dra ocupando toda a altura */}
-              <div className="relative h-full">
-                <img
-                  src="/images/diulliany-about.webp"
-                  alt="Dra. Diulliany Ferro - Advogada Criminalista"
-                  className="w-full h-full object-cover min-h-[180px] md:min-h-[200px]"
-                />
-                <div className="absolute top-3 left-3 bg-[#cc8c5d] rounded-full p-2 shadow-lg">
-                  <Scale className="h-4 w-4 text-[#10172a]" />
-                </div>
-                {/* Overlay gradient para mesclar com o fundo */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-800/60 md:to-slate-800/80"></div>
+              <div className="text-5xl font-bold text-accent mb-2 font-sans">
+                <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
+                  {item.number}
+                </span>
               </div>
+              <div className="text-lg font-semibold text-white mb-2 font-sans">
+                {item.title}
+              </div>
+              <div className="text-secondary text-base mb-2 font-sans">
+                {item.desc}
+              </div>
+              {/* Linha separadora dourada */}
+              <div
+                className="w-full h-px mt-6"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent 0%, #cc8c5d 50%, transparent 100%)",
+                  opacity: 0.3,
+                }}
+              />
+            </div>
+          );
+        })}
+      </div>
 
-              {/* Coluna 2 - Conteúdo */}
-              <div className="p-5 flex flex-col justify-center text-center md:text-left">
+      {/* Card CTA discreto */}
+      <div className="max-w-2xl mx-auto mt-12">
+        <div
+          className="relative rounded-xl overflow-hidden border border-[#cc8c5d]/20 shadow-lg"
+          style={{
+            background: "linear-gradient(135deg, #242b38 60%, #cc8c5d1a 100%)",
+          }}
+        >
+          {/* Brilho decorativo reduzido */}
+          <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-[#cc8c5d]/20 to-transparent rounded-full blur-xl pointer-events-none"></div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 min-h-[200px]">
+            {/* Coluna 1 - Foto da Dra ocupando toda a altura */}
+            <div className="relative h-full">
+              <img
+                src="/images/diulliany-about.webp"
+                alt="Dra. Diulliany Ferro - Advogada Criminalista"
+                className="w-full h-full object-cover min-h-[180px] md:min-h-[200px]"
+              />
+              <div className="absolute top-3 left-3 bg-[#cc8c5d] rounded-full p-2 shadow-lg">
+                <Scale className="h-4 w-4 text-[#10172a]" />
+              </div>
+              {/* Overlay gradient para mesclar com o fundo */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-800/60 md:to-slate-800/80"></div>
+            </div>
+
+            {/* Coluna 2 - Conteúdo */}
+            <div className="p-5 flex flex-col justify-center text-center md:text-left">
               {/* Título chamativo menor */}
               <h2 className="text-lg md:text-xl font-bold mb-3 bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
                 Precisa de defesa criminal especializada?
