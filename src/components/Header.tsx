@@ -130,89 +130,118 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Modern Mobile menu button with animated hamburger */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-all duration-300"
+            className="lg:hidden relative p-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-all duration-300"
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
-            {isMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            <div className="w-6 h-6 flex flex-col justify-center items-center">
+              <span
+                className={`block h-0.5 w-6 bg-current transform transition-all duration-300 ease-in-out ${
+                  isMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-1.5"
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-6 bg-current transform transition-all duration-300 ease-in-out ${
+                  isMenuOpen ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-6 bg-current transform transition-all duration-300 ease-in-out ${
+                  isMenuOpen ? "-rotate-45 -translate-y-1" : "translate-y-1.5"
+                }`}
+              />
+            </div>
           </button>
         </div>
       </div>
 
-      {/* Elegant Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-slate-900/98 backdrop-blur-xl border-t border-slate-700/30">
+      {/* Modern Mobile Navigation with enhanced transitions */}
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-500 ease-out ${
+          isMenuOpen
+            ? "max-h-screen opacity-100 transform translate-y-0"
+            : "max-h-0 opacity-0 transform -translate-y-4"
+        }`}
+      >
+        <div className="bg-slate-900/98 backdrop-blur-xl border-t border-slate-700/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <nav className="space-y-1">
+            <nav className="space-y-2">
               {navigation.map((item, index) => (
-                <div key={item.name}>
+                <div
+                  key={item.name}
+                  className={`transform transition-all duration-500 ease-out ${
+                    isMenuOpen
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-8 opacity-0"
+                  }`}
+                  style={{
+                    transitionDelay: isMenuOpen ? `${index * 100}ms` : "0ms",
+                  }}
+                >
                   {item.dropdown ? (
                     <>
                       <button
-                        className="w-full text-left px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-xl font-medium transition-all duration-300 group flex items-center justify-between"
+                        className="w-full text-left px-4 py-3 text-slate-300 hover:text-white hover:bg-gradient-to-r hover:from-[#cc8c5d]/10 hover:to-[#e6b07a]/10 rounded-xl font-medium transition-all duration-300 group flex items-center justify-between border border-transparent hover:border-[#cc8c5d]/20"
                         onClick={() => setIsServicesOpen(!isServicesOpen)}
-                        style={{ animationDelay: `${index * 50}ms` }}
                       >
                         <span>{item.name}</span>
                         <ChevronDown
-                          className={`h-4 w-4 transition-transform duration-300 ${
+                          className={`h-4 w-4 transition-transform duration-300 text-[#cc8c5d] ${
                             isServicesOpen ? "rotate-180" : ""
                           }`}
                         />
                       </button>
-                      {isServicesOpen && (
-                        <div className="ml-4 mt-2 space-y-1">
-                          {item.dropdown.map((dropdownItem) => (
-                            <Link
-                              key={dropdownItem.name}
-                              href={dropdownItem.href}
-                              className="block px-4 py-2 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-lg transition-all duration-300"
-                              onClick={() => {
-                                setIsMenuOpen(false);
-                                setIsServicesOpen(false);
-                              }}
-                            >
-                              {dropdownItem.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
+                      <div
+                        className={`ml-4 mt-2 space-y-1 overflow-hidden transition-all duration-300 ease-out ${
+                          isServicesOpen
+                            ? "max-h-96 opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        {item.dropdown.map((dropdownItem, dropIndex) => (
+                          <Link
+                            key={dropdownItem.name}
+                            href={dropdownItem.href}
+                            className={`block px-4 py-2 text-slate-400 hover:text-white hover:bg-gradient-to-r hover:from-[#cc8c5d]/10 hover:to-[#e6b07a]/10 rounded-lg transition-all duration-300 border-l-2 border-transparent hover:border-[#cc8c5d] transform ${
+                              isServicesOpen
+                                ? "translate-x-0 opacity-100"
+                                : "translate-x-4 opacity-0"
+                            }`}
+                            style={{
+                              transitionDelay: isServicesOpen
+                                ? `${dropIndex * 50}ms`
+                                : "0ms",
+                            }}
+                            onClick={() => {
+                              setIsMenuOpen(false);
+                              setIsServicesOpen(false);
+                            }}
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        ))}
+                      </div>
                     </>
                   ) : (
                     <Link
                       href={item.href}
-                      className="block px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-xl font-medium transition-all duration-300 group"
+                      className="block px-4 py-3 text-slate-300 hover:text-white hover:bg-gradient-to-r hover:from-[#cc8c5d]/10 hover:to-[#e6b07a]/10 rounded-xl font-medium transition-all duration-300 group border border-transparent hover:border-[#cc8c5d]/20"
                       onClick={() => setIsMenuOpen(false)}
-                      style={{ animationDelay: `${index * 50}ms` }}
                     >
                       <div className="flex items-center justify-between">
                         <span>{item.name}</span>
-                        <div className="w-2 h-2 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="w-2 h-2 bg-[#cc8c5d] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110"></div>
                       </div>
                     </Link>
                   )}
                 </div>
               ))}
             </nav>
-
-            <div className="mt-6 pt-6 border-t border-slate-700/30">
-              <Link
-                href="#contato"
-                className="block w-full bg-gradient-to-r from-[#cc8c5d] to-[#b8794c] hover:from-[#b8794c] hover:to-[#a66d3e] text-white text-center px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-[#cc8c5d]/25 transition-all duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Consulta Gratuita
-              </Link>
-            </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

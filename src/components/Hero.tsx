@@ -74,11 +74,11 @@ export default function Hero() {
       {/* WhatsApp Popup */}
       <WhatsAppPopup showPopup={showPopup} onClose={handlePopupClose} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-4 md:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 items-center">
           {/* Left Content */}
           <div
-            className={`space-y-8 transform transition-all duration-1000 ease-out overflow-hidden ${
+            className={`space-y-2 md:space-y-8 transform transition-all duration-1000 ease-out overflow-hidden ${
               isLoaded
                 ? "translate-x-0 opacity-100"
                 : "-translate-x-5 opacity-0"
@@ -97,11 +97,66 @@ export default function Hero() {
 
             {/* Description */}
             <div>
-              <p className="text-lg text-gray-300 leading-relaxed max-w-lg">
+              <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-lg">
                 Está sendo preso, investigado ou processado? Conte com uma
                 advogada experiente, estratégica e dedicada, pronta para agir
                 com rapidez e precisão.
               </p>
+            </div>
+
+            {/* Statistics Cards - Mobile First (aparecem antes dos botões em mobile) */}
+            <div className="md:hidden grid grid-cols-3 gap-2 max-w-xl mx-auto pt-2 mb-6">
+              <div
+                className={`bg-slate-800/50 backdrop-blur-sm rounded-lg p-2 text-center border border-slate-700 transform transition-all duration-800 ease-out delay-700 ${
+                  isLoaded
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-5 opacity-0"
+                }`}
+              >
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center gap-1">
+                    <Scale className="h-4 w-4 text-[#cc8c5d]/70" />
+                    <div className="text-lg font-bold text-[#cc8c5d]">500+</div>
+                  </div>
+                  <div className="text-[9px] text-gray-400 uppercase tracking-wide">
+                    Casos de Sucesso
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`bg-slate-800/50 backdrop-blur-sm rounded-lg p-2 text-center border border-slate-700 transform transition-all duration-800 ease-out delay-800 ${
+                  isLoaded
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-5 opacity-0"
+                }`}
+              >
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center gap-1">
+                    <CheckCircle className="h-4 w-4 text-[#cc8c5d]/70" />
+                    <div className="text-lg font-bold text-[#cc8c5d]">99%</div>
+                  </div>
+                  <div className="text-[9px] text-gray-400 uppercase tracking-wide">
+                    Clientes Satisfeitos
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`bg-slate-800/50 backdrop-blur-sm rounded-lg p-2 text-center border border-slate-700 transform transition-all duration-800 ease-out delay-900 ${
+                  isLoaded
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-5 opacity-0"
+                }`}
+              >
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center gap-1">
+                    <Zap className="h-4 w-4 text-[#cc8c5d]/70" />
+                    <div className="text-lg font-bold text-[#cc8c5d]">24h</div>
+                  </div>
+                  <div className="text-[9px] text-gray-400 uppercase tracking-wide">
+                    Atendimento Imediato
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* CTA Buttons */}
@@ -127,8 +182,8 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Statistics Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-xl mx-auto pt-6">
+            {/* Statistics Cards - Desktop (aparecem depois dos botões em desktop) */}
+            <div className="hidden md:grid md:grid-cols-3 gap-4 max-w-xl mx-auto pt-6">
               <div
                 className={`bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700 transform transition-all duration-800 ease-out delay-700 ${
                   isLoaded
@@ -139,7 +194,7 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <Scale className="h-5 w-5 text-[#cc8c5d]/70" />
-                    <div className="text-xl md:text-2xl font-bold text-[#cc8c5d]">
+                    <div className="text-xl lg:text-2xl font-bold text-[#cc8c5d]">
                       500+
                     </div>
                   </div>
@@ -158,7 +213,7 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <CheckCircle className="h-5 w-5 text-[#cc8c5d]/70" />
-                    <div className="text-xl md:text-2xl font-bold text-[#cc8c5d]">
+                    <div className="text-xl lg:text-2xl font-bold text-[#cc8c5d]">
                       99%
                     </div>
                   </div>
@@ -177,7 +232,7 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <Zap className="h-5 w-5 text-[#cc8c5d]/70" />
-                    <div className="text-xl md:text-2xl font-bold text-[#cc8c5d]">
+                    <div className="text-xl lg:text-2xl font-bold text-[#cc8c5d]">
                       24h
                     </div>
                   </div>
@@ -201,9 +256,17 @@ export default function Hero() {
             <div className="relative flex justify-end">
               {/* Placeholder for lawyer photo */}
               <div className="relative max-w-lg w-full">
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative backdrop-blur-md">
-                  {/* Glass effect overlay - only blur, no solid color */}
-                  <div className="absolute inset-0 backdrop-blur-md bg-black/20"></div>
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden relative backdrop-blur-[2px]">
+                  {/* Glass effect overlay - minimal blur with enhanced darkening */}
+                  <div className="absolute inset-0 backdrop-blur-[2px] bg-black/15"></div>
+
+                  {/* Decorative light points - closer to edges */}
+                  <div
+                    className="absolute top-1 right-1 w-16 h-16 rounded-full blur-xl opacity-60"
+                    style={{ backgroundColor: "rgba(204, 140, 93, 0.4)" }}
+                  ></div>
+                  <div className="absolute bottom-1 left-1 w-20 h-20 bg-slate-600/30 rounded-full blur-xl opacity-50"></div>
+
                   {/* Photo */}
                   <Image
                     src="/images/diulliany-ferro.png"
@@ -212,25 +275,18 @@ export default function Hero() {
                     className="object-cover object-top relative z-10"
                     priority
                   />
-                </div>
 
-                {/* Professional Info Card - Compact and positioned at bottom-right corner */}
-                <div className="absolute bottom-2 right-2 bg-slate-800/80 backdrop-blur-sm rounded-md px-2 py-1 border border-slate-600/50 z-20">
-                  <h3 className="font-semibold text-white text-xs">
-                    Dra. Diulliany Ferro
-                  </h3>
-                  <p className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent font-medium text-xs">
-                    OAB/GO 66.387
-                  </p>
+                  {/* Professional Info Card */}
+                  <div className="absolute bottom-4 right-4 bg-slate-800/90 backdrop-blur-sm rounded-md px-2 py-1 z-20">
+                    <h3 className="font-semibold text-white text-xs">
+                      Dra. Diulliany Ferro
+                    </h3>
+                    <p className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent font-medium text-xs">
+                      OAB/GO 66.387
+                    </p>
+                  </div>
                 </div>
               </div>
-
-              {/* Decorative elements */}
-              <div
-                className="absolute -top-3 -right-3 w-20 h-20 rounded-full blur-xl"
-                style={{ backgroundColor: "rgba(204, 140, 93, 0.2)" }}
-              ></div>
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-slate-600/20 rounded-full blur-xl"></div>
             </div>
           </div>
         </div>
