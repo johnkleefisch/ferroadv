@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -20,6 +20,12 @@ import { forcarDiscador } from "@/utils/telefone";
 
 export default function Hero() {
   const [showPopup, setShowPopup] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Anima a entrada após o componente montar
+    setIsLoaded(true);
+  }, []);
 
   const handleFloatingButtonClick = () => {
     console.log("Button clicked, current showPopup:", showPopup);
@@ -59,7 +65,7 @@ export default function Hero() {
       {/* WhatsApp floating button */}
       <button
         onClick={handleFloatingButtonClick}
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer animate-float"
         aria-label="Contato via WhatsApp"
       >
         <WhatsAppIcon className="h-7 w-7" />
@@ -71,7 +77,13 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div
+            className={`space-y-8 transform transition-all duration-1000 ease-out ${
+              isLoaded
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-10 opacity-0"
+            }`}
+          >
             {/* Main Title */}
             <div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
@@ -117,7 +129,13 @@ export default function Hero() {
 
             {/* Statistics Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-xl mx-auto pt-6">
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700">
+              <div
+                className={`bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700 transform transition-all duration-800 ease-out delay-700 ${
+                  isLoaded
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-5 opacity-0"
+                }`}
+              >
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <Scale className="h-5 w-5 text-[#cc8c5d]/70" />
@@ -130,7 +148,13 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700">
+              <div
+                className={`bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700 transform transition-all duration-800 ease-out delay-800 ${
+                  isLoaded
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-5 opacity-0"
+                }`}
+              >
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <CheckCircle className="h-5 w-5 text-[#cc8c5d]/70" />
@@ -143,7 +167,13 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700">
+              <div
+                className={`bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 text-center border border-slate-700 transform transition-all duration-800 ease-out delay-900 ${
+                  isLoaded
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-5 opacity-0"
+                }`}
+              >
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <Zap className="h-5 w-5 text-[#cc8c5d]/70" />
@@ -160,7 +190,13 @@ export default function Hero() {
           </div>
 
           {/* Right Content - Lawyer Photo */}
-          <div className="relative lg:ml-4">
+          <div
+            className={`relative lg:ml-4 transform transition-all duration-1200 ease-out delay-300 ${
+              isLoaded
+                ? "translate-x-0 opacity-100 scale-100"
+                : "translate-x-10 opacity-0 scale-95"
+            }`}
+          >
             {/* Main Image Container */}
             <div className="relative flex justify-end">
               {/* Placeholder for lawyer photo */}
