@@ -23,7 +23,7 @@ export default function Home() {
     useScrollAnimation(0.1);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Header />
 
       {/* Hero sem animação pois já está visível */}
@@ -32,10 +32,8 @@ export default function Home() {
       {/* Áreas de Atuação com fade-up */}
       <section
         ref={areasRef}
-        className={`transform transition-all duration-1000 ease-out ${
-          areasVisible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-10 opacity-0"
+        className={`transform transition-all duration-1000 ease-out overflow-hidden ${
+          areasVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
         }`}
       >
         <AreasDeAtuacao />
@@ -44,10 +42,10 @@ export default function Home() {
       {/* Sobre com slide-in da esquerda */}
       <section
         ref={sobreRef}
-        className={`transform transition-all duration-1000 ease-out delay-100 ${
+        className={`transform transition-all duration-1000 ease-out delay-100 overflow-hidden ${
           sobreVisible
             ? "translate-x-0 opacity-100"
-            : "-translate-x-10 opacity-0"
+            : "-translate-x-5 opacity-0"
         }`}
       >
         <Sobre />
@@ -66,10 +64,10 @@ export default function Home() {
       {/* Depoimentos com slide-in da direita */}
       <section
         ref={depoimentosRef}
-        className={`transform transition-all duration-1000 ease-out delay-300 ${
+        className={`transform transition-all duration-1000 ease-out delay-300 overflow-hidden ${
           depoimentosVisible
             ? "translate-x-0 opacity-100"
-            : "translate-x-10 opacity-0"
+            : "translate-x-5 opacity-0"
         }`}
       >
         <Depoimentos />
@@ -88,10 +86,10 @@ export default function Home() {
       {/* Contato com slide-in da esquerda */}
       <section
         ref={contatoRef}
-        className={`transform transition-all duration-1000 ease-out delay-500 ${
+        className={`transform transition-all duration-1000 ease-out delay-500 overflow-hidden ${
           contatoVisible
             ? "translate-x-0 opacity-100"
-            : "-translate-x-10 opacity-0"
+            : "-translate-x-5 opacity-0"
         }`}
       >
         <Contato />

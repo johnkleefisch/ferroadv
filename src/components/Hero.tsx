@@ -78,10 +78,10 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
           <div
-            className={`space-y-8 transform transition-all duration-1000 ease-out ${
+            className={`space-y-8 transform transition-all duration-1000 ease-out overflow-hidden ${
               isLoaded
                 ? "translate-x-0 opacity-100"
-                : "-translate-x-10 opacity-0"
+                : "-translate-x-5 opacity-0"
             }`}
           >
             {/* Main Title */}
@@ -191,10 +191,10 @@ export default function Hero() {
 
           {/* Right Content - Lawyer Photo */}
           <div
-            className={`relative lg:ml-4 transform transition-all duration-1200 ease-out delay-300 ${
+            className={`relative lg:ml-4 transform transition-all duration-1200 ease-out delay-300 overflow-hidden ${
               isLoaded
                 ? "translate-x-0 opacity-100 scale-100"
-                : "translate-x-10 opacity-0 scale-95"
+                : "translate-x-5 opacity-0 scale-95"
             }`}
           >
             {/* Main Image Container */}

@@ -16,11 +16,16 @@
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-x: hidden; /* Previne scroll horizontal */
+}
+
 body {
   background: var(--color-primary);
   color: var(--color-text-primary);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  overflow-x: hidden; /* Previne scroll horizontal */
 }
 
 /* Typography Base */
