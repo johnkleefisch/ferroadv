@@ -67,13 +67,13 @@ export default function Resultados() {
     >
       <div className="container-default">
         <div className="text-center animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 font-sans">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
             Resultados que{" "}
             <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
               Falam por Si
             </span>
           </h2>
-          <p className="text-lg font-light text-white max-w-4xl mx-auto leading-relaxed mb-16">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto mb-16 font-normal">
             Nossa experiência e dedicação se refletem em resultados concretos
             que transformam vidas e garantem justiça
           </p>
@@ -111,15 +111,15 @@ export default function Resultados() {
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5 bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] transition-all duration-300">
                   <Icon className="h-7 w-7 text-slate-900" strokeWidth={1.5} />
                 </div>
-                <div className="text-5xl font-bold text-accent mb-2 font-sans">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent mb-2">
                   <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
                     {item.number}
                   </span>
                 </div>
-                <div className="text-lg font-semibold text-white mb-2 font-sans">
+                <div className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2">
                   {item.title}
                 </div>
-                <div className="text-secondary text-base mb-2 font-sans">
+                <div className="text-sm sm:text-base text-gray-300 mb-2 font-normal">
                   {item.desc}
                 </div>
                 {/* Linha separadora dourada */}
@@ -159,7 +159,7 @@ export default function Resultados() {
             {/* Conteúdo */}
             <div className="flex-1 text-center">
               {/* Título Chamativo */}
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-4">
                 <span className="text-white">Precisa de </span>
                 <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
                   defesa criminal especializada?

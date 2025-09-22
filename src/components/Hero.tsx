@@ -86,7 +86,7 @@ export default function Hero() {
           >
             {/* Main Title */}
             <div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
                 Defesa Criminal
                 <br />
                 <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
@@ -97,7 +97,7 @@ export default function Hero() {
 
             {/* Description */}
             <div>
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-lg">
+              <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-lg font-normal">
                 Está sendo preso, investigado ou processado? Conte com uma
                 advogada experiente, estratégica e dedicada, pronta para agir
                 com rapidez e precisão.
@@ -116,9 +116,9 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <Scale className="h-4 w-4 text-[#cc8c5d]/70" />
-                    <div className="text-lg font-bold text-[#cc8c5d]">500+</div>
+                    <div className="text-base sm:text-lg md:text-xl font-bold text-[#cc8c5d]">500+</div>
                   </div>
-                  <div className="text-[9px] text-gray-400 uppercase tracking-wide">
+                  <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wide font-medium">
                     Casos de Sucesso
                   </div>
                 </div>
@@ -133,9 +133,9 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-[#cc8c5d]/70" />
-                    <div className="text-lg font-bold text-[#cc8c5d]">99%</div>
+                    <div className="text-base sm:text-lg md:text-xl font-bold text-[#cc8c5d]">99%</div>
                   </div>
-                  <div className="text-[9px] text-gray-400 uppercase tracking-wide">
+                  <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wide font-medium">
                     Clientes Satisfeitos
                   </div>
                 </div>
@@ -150,9 +150,9 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <Zap className="h-4 w-4 text-[#cc8c5d]/70" />
-                    <div className="text-lg font-bold text-[#cc8c5d]">24h</div>
+                    <div className="text-base sm:text-lg md:text-xl font-bold text-[#cc8c5d]">24h</div>
                   </div>
-                  <div className="text-[9px] text-gray-400 uppercase tracking-wide">
+                  <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wide font-medium">
                     Atendimento Imediato
                   </div>
                 </div>
@@ -194,11 +194,11 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <Scale className="h-5 w-5 text-[#cc8c5d]/70" />
-                    <div className="text-xl lg:text-2xl font-bold text-[#cc8c5d]">
+                    <div className="text-lg xl:text-xl font-bold text-[#cc8c5d]">
                       500+
                     </div>
                   </div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wide">
+                  <div className="text-sm text-gray-400 uppercase tracking-wide font-medium">
                     Casos de Sucesso
                   </div>
                 </div>
@@ -213,11 +213,11 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <CheckCircle className="h-5 w-5 text-[#cc8c5d]/70" />
-                    <div className="text-xl lg:text-2xl font-bold text-[#cc8c5d]">
+                    <div className="text-lg xl:text-xl font-bold text-[#cc8c5d]">
                       99%
                     </div>
                   </div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wide">
+                  <div className="text-sm text-gray-400 uppercase tracking-wide font-medium">
                     Clientes Satisfeitos
                   </div>
                 </div>
@@ -232,11 +232,11 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <Zap className="h-5 w-5 text-[#cc8c5d]/70" />
-                    <div className="text-xl lg:text-2xl font-bold text-[#cc8c5d]">
+                    <div className="text-lg xl:text-xl font-bold text-[#cc8c5d]">
                       24h
                     </div>
                   </div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wide">
+                  <div className="text-sm text-gray-400 uppercase tracking-wide font-medium">
                     Atendimento Imediato
                   </div>
                 </div>

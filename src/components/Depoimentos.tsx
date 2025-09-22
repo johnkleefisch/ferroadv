@@ -61,13 +61,13 @@ export default function Depoimentos() {
     >
       <div className="container-default">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             O Que Dizem{" "}
             <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
               Nossos Clientes
             </span>
           </h2>
-          <p className="text-lg font-light text-white max-w-4xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto font-normal">
             A satisfação dos nossos clientes é o melhor indicador da qualidade
             dos nossos serviços jurídicos
           </p>
@@ -129,7 +129,7 @@ export default function Depoimentos() {
               </div>
 
               {/* Texto do depoimento */}
-              <blockquote className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+              <blockquote className="text-sm sm:text-base font-normal text-white/90 mb-6 leading-relaxed">
                 &ldquo;{depoimento.texto}&rdquo;
               </blockquote>
 
@@ -145,7 +145,7 @@ export default function Depoimentos() {
 
               {/* Autor */}
               <div className="relative z-10">
-                <div className="font-bold text-white text-base">
+                <div className="text-sm sm:text-base font-bold text-white">
                   {depoimento.nome}
                 </div>
                 <div className="text-white/70 text-sm">

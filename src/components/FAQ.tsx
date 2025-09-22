@@ -67,13 +67,13 @@ export default function FAQ() {
     >
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Perguntas{" "}
             <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
               Frequentes
             </span>
           </h2>
-          <p className="text-lg font-light text-white max-w-4xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto font-normal">
             Esclarecemos as principais dúvidas sobre direito criminal e nossos
             serviços
           </p>
@@ -117,7 +117,7 @@ export default function FAQ() {
                 aria-expanded={perguntaAberta === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="font-semibold text-white pr-4 text-lg">
+                <span className="text-sm sm:text-base md:text-lg font-semibold text-white pr-4">
                   {faq.pergunta}
                 </span>
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] hover:from-[#b8794c] hover:to-[#d4956a]">
@@ -143,7 +143,7 @@ export default function FAQ() {
                       opacity: 0.3,
                     }}
                   />
-                  <p className="text-white/90 leading-relaxed text-base">
+                  <p className="text-sm sm:text-base text-white/90 leading-relaxed font-normal">
                     {faq.resposta}
                   </p>
                 </div>

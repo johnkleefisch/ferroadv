@@ -97,13 +97,13 @@ export default function AreasDeAtuacao() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header - Título Centralizado */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-inter">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Áreas de{" "}
             <span className="bg-gradient-to-r from-[#cc8c5d] to-[#f3c793] bg-clip-text text-transparent">
               Atuação
             </span>
           </h2>
-          <p className="text-lg font-light text-white max-w-4xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto font-normal">
             Especialização completa em Direito Criminal com foco em resultados
             excepcionais e defesa estratégica personalizada para cada caso.
           </p>
@@ -151,13 +151,13 @@ export default function AreasDeAtuacao() {
                       strokeWidth={1.5}
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-white font-inter">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">
                     {area.title}
                   </h3>
                 </div>
 
                 {/* Descrição (Opcional) */}
-                <p className="text-sm font-normal text-white/90 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base font-normal text-white/90 mb-6 leading-relaxed">
                   {area.description}
                 </p>
 
@@ -169,7 +169,7 @@ export default function AreasDeAtuacao() {
                         className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
                         style={{ backgroundColor: "#cc8c5d" }}
                       />
-                      <span className="text-sm font-normal text-white/90">
+                      <span className="text-sm sm:text-base font-normal text-white/90">
                         {specialty}
                       </span>
                     </div>

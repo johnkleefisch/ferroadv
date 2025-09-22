@@ -79,13 +79,13 @@ export default function Contato() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Entre em{" "}
             <span className="bg-gradient-to-r from-[#cc8c5d] to-[#e6b07a] bg-clip-text text-transparent">
               Contato
             </span>
           </h2>
-          <p className="text-white/90 mb-8 text-lg leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-8 font-normal">
             Estamos prontos para ajudá-lo. Entre em contato conosco para
             avaliação inicial do seu caso, com total confidencialidade.
           </p>
