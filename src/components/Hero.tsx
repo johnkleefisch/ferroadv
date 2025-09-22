@@ -116,7 +116,9 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <Scale className="h-4 w-4 text-[#cc8c5d]/70" />
-                    <div className="text-base sm:text-lg md:text-xl font-bold text-[#cc8c5d]">500+</div>
+                    <div className="text-base sm:text-lg md:text-xl font-bold text-[#cc8c5d]">
+                      500+
+                    </div>
                   </div>
                   <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wide font-medium">
                     Casos de Sucesso
@@ -133,7 +135,9 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-[#cc8c5d]/70" />
-                    <div className="text-base sm:text-lg md:text-xl font-bold text-[#cc8c5d]">99%</div>
+                    <div className="text-base sm:text-lg md:text-xl font-bold text-[#cc8c5d]">
+                      99%
+                    </div>
                   </div>
                   <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wide font-medium">
                     Clientes Satisfeitos
@@ -150,7 +154,9 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-1">
                     <Zap className="h-4 w-4 text-[#cc8c5d]/70" />
-                    <div className="text-base sm:text-lg md:text-xl font-bold text-[#cc8c5d]">24h</div>
+                    <div className="text-base sm:text-lg md:text-xl font-bold text-[#cc8c5d]">
+                      24h
+                    </div>
                   </div>
                   <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wide font-medium">
                     Atendimento Imediato
